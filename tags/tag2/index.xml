@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tag2 on STOR-i Blog</title>
+    <link>/tags/tag2/</link>
+    <description>Recent content in Tag2 on STOR-i Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 09 Feb 2018 15:48:38 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/tag2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>/blog/2018-02-09-/</link>
+      <pubDate>Fri, 09 Feb 2018 15:48:38 +0000</pubDate>
+      
+      <guid>/blog/2018-02-09-/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

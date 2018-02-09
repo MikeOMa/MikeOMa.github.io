@@ -56,7 +56,12 @@
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
     
-        <link href="http://feeds.feedburner.com/..." rel="alternate" type="application/rss+xml" title="STOR-i Blog" />
+      
+          <link href="../index.xml" rel="alternate" type="application/rss+xml" title="STOR-i Blog" />
+      
+      
+        <link href="../post/index.xml" rel="alternate" type="application/rss+xml" title="Posts &middot; STOR-i Blog" />
+      
     
     <meta name="generator" content="Hugo 0.35" />
 
@@ -72,6 +77,13 @@
     "publisher": {
         "@type": "Person",
         "name": ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": /images/logo.png,
+            "width": 250,
+            "height": 250
+        },
         
         "url": http://lancaster.ac.uk/~omalley3,
         "sameAs": [
@@ -117,14 +129,19 @@
         
             
             <li class="nav-opened" role="presentation">
-            	<a href="http://lancaster.ac.uk/~omalley3">Home</a>
+            	<a href="http://lancaster.ac.uk/~omalley3">My Website</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="../">Blog Entries</a>
             </li>
         
         
     </ul>
 
     
-    <a class="subscribe-button icon-feed" href="http://feeds.feedburner.com/...">Subscribe</a> </div>
+    <a class="subscribe-button icon-feed" href="../post/index.xml">Subscribe</a>
     
 </div>
 <span class="nav-cover"></span>
@@ -140,6 +157,8 @@
   
 
     <nav class="main-nav overlay clearfix">
+      
+        <a class="blog-logo" href="../"><img src="../images/logo.png" alt="Home" /></a>
       
       
           <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
@@ -170,6 +189,44 @@
 	
 	   <article class="post post">
     <header class="post-header">
+        <h2 class="post-title"><a href="../blog/2018-02-05-changepoints--sensor-data/">Changepoints &amp; Sensor Data</a></h2>
+    </header>
+    <section class="post-excerpt">
+        
+            <p>Last week I attended a talk given by Professor Idris Eckley named &ldquo;Making Sense of Sensor Data&rdquo;. One of the main areas I see sensors being used everyday is my phone telling me how much I&rsquo;ve walked. There is quite a few problems in sensor data. I&rsquo;ll look at two of them here namely the changepoints in the data and the frequency at which we observe data
+Changepoints The first is quite simple, suppose we observe a long uni-variate time series of some movement measure in a sensor call it n. <a class="read-more" href="../blog/2018-02-05-changepoints--sensor-data/">&raquo;</a></p>
+        
+    </section>
+    <footer class="post-meta">
+        
+
+        
+            
+            
+
+            
+            <img class="author-thumb" src="../images/logo.png" alt="Author image" nopin="nopin" />
+            
+            
+            
+            Mike
+                 
+        
+
+        on
+            
+                <a href="//tags/changepoints/">#Changepoints</a>,
+            
+        
+        <time class="post-date" datetime="2018-02-05T00:00:00Z">
+            5 Feb 2018
+        </time>
+    </footer>
+</article>
+
+	
+	   <article class="post post">
+    <header class="post-header">
         <h2 class="post-title"><a href="../blog/2018-01-26-an-extremely-interesting-way-to-view-data/">An &#34;Extreme&#34;ly interesting way to view data</a></h2>
     </header>
     <section class="post-excerpt">
@@ -184,6 +241,8 @@
             
             
 
+            
+            <img class="author-thumb" src="../images/logo.png" alt="Author image" nopin="nopin" />
             
             
             
@@ -223,6 +282,8 @@ Anyways about the actual blog. In the MRes year at STOR-i we attend talks &amp; 
             
 
             
+            <img class="author-thumb" src="../images/logo.png" alt="Author image" nopin="nopin" />
+            
             
             
             Mike
@@ -232,47 +293,6 @@ Anyways about the actual blog. In the MRes year at STOR-i we attend talks &amp; 
         
         <time class="post-date" datetime="2017-12-12T00:00:00Z">
             12 Dec 2017
-        </time>
-    </footer>
-</article>
-
-	
-	   <article class="post post">
-    <header class="post-header">
-        <h2 class="post-title"><a href="../blog/2015-07-23-hello-r-markdown/">Hello R Markdown</a></h2>
-    </header>
-    <section class="post-excerpt">
-        
-            <p>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
-You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu. <a class="read-more" href="../blog/2015-07-23-hello-r-markdown/">&raquo;</a></p>
-        
-    </section>
-    <footer class="post-meta">
-        
-
-        
-            
-            
-
-            
-            
-            
-            Frida Gomam
-                 
-        
-
-        on
-            
-                <a href="//tags/r-markdown/">#R Markdown</a>,
-            
-                <a href="//tags/plot/">#plot</a>,
-            
-                <a href="//tags/regression/">#regression</a>,
-            
-        
-        <time class="post-date" datetime="2015-07-23T21:13:14-05:00">
-            23 Jul 2015
         </time>
     </footer>
 </article>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Statistics on STOR-i Blog</title>
+    <link>/categories/statistics/</link>
+    <description>Recent content in Statistics on STOR-i Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Feb 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Changepoints &amp; Sensor Data</title>
+      <link>/blog/2018-02-05-changepoints--sensor-data/</link>
+      <pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018-02-05-changepoints--sensor-data/</guid>
+      <description>Last week I attended a talk given by Professor Idris Eckley named &amp;ldquo;Making Sense of Sensor Data&amp;rdquo;. One of the main areas I see sensors being used everyday is my phone telling me how much I&amp;rsquo;ve walked. There is quite a few problems in sensor data. I&amp;rsquo;ll look at two of them here namely the changepoints in the data and the frequency at which we observe data
+Changepoints The first is quite simple, suppose we observe a long uni-variate time series of some movement measure in a sensor call it n.</description>
+    </item>
+    
+  </channel>
+</rss>

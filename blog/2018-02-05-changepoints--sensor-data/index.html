@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Changepoints &amp; Sensor Data"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Changepoints &amp; Sensor Data &middot; STOR-i Blog" />
+  	<meta property="og:site_name" content="STOR-i Blog" />
+  	<meta property="og:url" content="/blog/2018-02-05-changepoints--sensor-data/" />
+
+    
+        
+            <meta property="og:image" content="/images/cover.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2018-02-05T00:00:00Z" />
+
+    
+    <meta property="article:tag" content="Changepoints" />
+    
+    
+
+    <title>Changepoints &amp; Sensor Data &middot; STOR-i Blog</title>
+
+    
+    <meta name="description" content="Last week I attended a talk given by Professor Idris Eckley named &amp;ldquo;Making Sense of Sensor Data&amp;rdquo;. One of the main areas I see sensors being used ever" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="../../images/favicon.ico">
+	  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="../../css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/nav.css" />
+
+    
+
+    
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    
+      
+          <link href="../../index.xml" rel="alternate" type="application/rss+xml" title="STOR-i Blog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.35" />
+
+    <link rel="canonical" href="../../blog/2018-02-05-changepoints--sensor-data/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": ,
+        "logo": /images/logo.png
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": /images/logo.png,
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": http://lancaster.ac.uk/~omalley3,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": Statistics &amp; Operations Student
+        
+    },
+    "headline": Changepoints &amp; Sensor Data,
+    "name": Changepoints &amp; Sensor Data,
+    "wordCount": 587,
+    "timeRequired": "PT3M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": /blog/2018-02-05-changepoints--sensor-data/,
+    "datePublished": 2018-02-05T00:00Z,
+    "dateModified": 2018-02-05T00:00Z,
+    
+    "keywords": Changepoints,
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": /blog/2018-02-05-changepoints--sensor-data/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="http://lancaster.ac.uk/~omalley3">My Website</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="../../">Blog Entries</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="../../index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="../../"><img src="../../images/logo.png" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Changepoints &amp; Sensor Data</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2018-02-05T00:00:00Z">
+            Feb 5, 2018
+          </time>
+        
+         
+          <span class="post-tag small"><a href="//tags/changepoints/">#Changepoints</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      
+
+<p>Last week I attended a talk given by Professor Idris Eckley named &ldquo;Making Sense of Sensor Data&rdquo;. One of the main areas I see sensors being used everyday is my phone telling me how much I&rsquo;ve walked. There is quite a few problems in sensor data. I&rsquo;ll look at two of them here namely the changepoints in the data and the frequency at which we observe data</p>
+
+<h3 id="changepoints">Changepoints</h3>
+
+<p>The first is quite simple, suppose we observe a long uni-variate time series of some movement measure in a sensor call it n. For the purpose of this blog I&rsquo;ll simply generate some fake data:</p>
+
+<p><img src="../img/run.png" alt="The picture on the left doesn't have the mean of the generating process drawn in, the right does." />
+<em>The picture on the left doesn&rsquo;t have the mean of the generating process drawn in, the right does.</em></p>
+
+<p>I generated the data by taking three different possible states: Walking (mean speed 4, variance of speed 1), Jogging (mean 7, variance 2) or Running (mean 10, variance 4). For each of these states I sampled a point from a normal distribution for each second and changed paces as time goes on. What changepoint analysis aims to do is look at the time series as a whole and answer two questions</p>
+
+<p>How many changepoints is there?
+Where&rsquo;s the most likely place for them to be?
+I tested two methods binary segmentation (Fast but approximate) and segment neighborhood (slow but exact). For both methods I told them to look for changes in both mean and variance and a maximum of 8 changepoints.</p>
+
+<p>What happened was that binary segmentation falsely detected a changepoint at t=3 but did the rest almost (total of 5 seconds in error). However segment neighborhood detected the exact results.</p>
+
+<p>With a dataset of this size the difference in speed hardly matters however when we get to larger datasets speed becomes a very important issue. This is where PELT (1) comes in which is shown to be almost as fast as binary segmentation but nearly always gives a more accurate solution.</p>
+
+<h3 id="rate-of-data">Rate of Data</h3>
+
+<p>Take your phone for an example, if you have a fairly new phone is probably has some feature than tells you how much you walk, run and climb stairs each day. I had a look at an app on my phone that gives the raw data of the accelerometor sensor which observes how much your phone moves in 3d.</p>
+
+<p><img src="../img/run.png" alt="Picture of my accelerometer time series data as I move the phone back and forth from my face. It accurately detects that it's not moving much in the y direction (to the ceiling) or x direction (right/left)." />
+<em>Picture of my accelerometer time series data as I move the phone back and forth from my face. It accurately detects that it&rsquo;s not moving much in the y direction (to the ceiling) or x direction (right/left).</em></p>
+
+<p>The picture above was recording my movements 50 times per second. To go from this much data, say when my phone is in my pocket down to a diagnosis of what I&rsquo;m doing at any given time is a very difficult problem. Sadly at the moment I don&rsquo;t have any looked into any solutions however time series clustering seems to be the right area to look at, I plan on looking at this in future.</p>
+
+<p>Another slightly strange phenomena is that if you observed data at the wrong frequency then the results can be extremely misleading. One example is the wagon wheel effect:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jHS9JGkEOmA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<p>The same thing can happen in certain situations in sensor phone sensor data for example you might want to check if someone is climbing stairs vs walking. If say we&rsquo;re just looking at the vertical component of the accelerator and we miss the actual vertical launch due to sampling frequency it will look like the person is standing still rather than climbing.</p>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="../../" style="background-image: url(/images/logo.png)"><span class="hidden">Mike's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="../../">Mike</a></h4>
+  
+  <p>Statistics &amp; Operations Student</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">STOR-i, Lancaster University</span>
+    <span class="author-link icon-link"><a href="http://lancaster.ac.uk/~omalley3">http://lancaster.ac.uk/~omalley3</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Changepoints%20%26%20Sensor%20Data&nbsp;-&nbsp;STOR-i%20Blog&amp;url=%2fblog%2f2018-02-05-changepoints--sensor-data%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fblog%2f2018-02-05-changepoints--sensor-data%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fblog%2f2018-02-05-changepoints--sensor-data%2f&amp;description=Changepoints%20%26%20Sensor%20Data"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fblog%2f2018-02-05-changepoints--sensor-data%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="../../blog/2018-01-26-an-extremely-interesting-way-to-view-data/">
+          <section class="post">
+              <h2>An &#34;Extreme&#34;ly interesting way to view data</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">STOR-i Blog</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../../js/index.js"></script>
+    
+</body>
+</html>
+
