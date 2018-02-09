@@ -21,11 +21,29 @@
     </item>
     
     <item>
+      <title>Blogdown</title>
+      <link>/tags/blogdown/</link>
+      <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/blogdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Changepoints</title>
       <link>/tags/changepoints/</link>
       <pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/changepoints/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R</title>
+      <link>/tags/r/</link>
+      <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/r/</guid>
       <description></description>
     </item>
     
