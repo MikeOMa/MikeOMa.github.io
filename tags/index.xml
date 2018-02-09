@@ -6,10 +6,19 @@
     <description>Recent content in Tags on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jan 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Applications</title>
+      <link>/tags/applications/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/applications/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Plot</title>
@@ -35,6 +44,15 @@
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
       <guid>/tags/regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Theory</title>
+      <link>/tags/theory/</link>
+      <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/theory/</guid>
       <description></description>
     </item>
     
