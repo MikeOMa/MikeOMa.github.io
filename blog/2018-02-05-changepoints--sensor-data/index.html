@@ -108,7 +108,7 @@
     },
     "headline": Changepoints &amp; Sensor Data,
     "name": Changepoints &amp; Sensor Data,
-    "wordCount": 587,
+    "wordCount": 589,
     "timeRequired": "PT3M",
     "inLanguage": {
       "@type": "Language",
@@ -231,7 +231,7 @@
 Where&rsquo;s the most likely place for them to be?
 I tested two methods binary segmentation (Fast but approximate) and segment neighborhood (slow but exact). For both methods I told them to look for changes in both mean and variance and a maximum of 8 changepoints.</p>
 
-<p>What happened was that binary segmentation falsely detected a changepoint at t=3 but did the rest almost (total of 5 seconds in error). However segment neighborhood detected the exact results.</p>
+<p>What happened was that binary segmentation falsely detected a changepoint at t=3 but did the rest almost exactly (total of 5 seconds in error). However segment neighborhood detected the exact results.</p>
 
 <p>With a dataset of this size the difference in speed hardly matters however when we get to larger datasets speed becomes a very important issue. This is where PELT (1) comes in which is shown to be almost as fast as binary segmentation but nearly always gives a more accurate solution.</p>
 
@@ -239,10 +239,10 @@ I tested two methods binary segmentation (Fast but approximate) and segment neig
 
 <p>Take your phone for an example, if you have a fairly new phone is probably has some feature than tells you how much you walk, run and climb stairs each day. I had a look at an app on my phone that gives the raw data of the accelerometor sensor which observes how much your phone moves in 3d.</p>
 
-<p><img src="../img/run.png" alt="Picture of my accelerometer time series data as I move the phone back and forth from my face. It accurately detects that it's not moving much in the y direction (to the ceiling) or x direction (right/left)." />
+<p><img src="../img/ss.png" alt="Picture of my accelerometer time series data as I move the phone back and forth from my face. It accurately detects that it's not moving much in the y direction (to the ceiling) or x direction (right/left)." />
 <em>Picture of my accelerometer time series data as I move the phone back and forth from my face. It accurately detects that it&rsquo;s not moving much in the y direction (to the ceiling) or x direction (right/left).</em></p>
 
-<p>The picture above was recording my movements 50 times per second. To go from this much data, say when my phone is in my pocket down to a diagnosis of what I&rsquo;m doing at any given time is a very difficult problem. Sadly at the moment I don&rsquo;t have any looked into any solutions however time series clustering seems to be the right area to look at, I plan on looking at this in future.</p>
+<p>The picture above was recording my movements 50 times per second. To go from this much data to say when my phone is in my pocket down to a diagnosis of what I&rsquo;m doing at any given time is a very difficult problem. Sadly at the moment I don&rsquo;t have any looked into any solutions however time series clustering seems to be the right area to look at, I plan on looking at this in future.</p>
 
 <p>Another slightly strange phenomena is that if you observed data at the wrong frequency then the results can be extremely misleading. One example is the wagon wheel effect:</p>
 
