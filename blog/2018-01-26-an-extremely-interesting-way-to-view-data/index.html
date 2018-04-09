@@ -110,7 +110,7 @@
     },
     "headline": An &#34;Extreme&#34;ly interesting way to view data,
     "name": An &#34;Extreme&#34;ly interesting way to view data,
-    "wordCount": 753,
+    "wordCount": 751,
     "timeRequired": "PT4M",
     "inLanguage": {
       "@type": "Language",
@@ -219,7 +219,7 @@
 
     <section class="post-content">
       <p>If you can't guess from the title this post is about Extreme Value Theory (EVT). Last week I attended a talk from Professor Jonathan Tawn on some EVT applications and Jenny Wadsworth on some theory in multivariate EVT. I found it particularly interesting as unlike most methods of analyzing data we don't really care about the data which isn't surprising, instead we focus on modelling the tail ends and unlikely observations. All graphics in this blog post are from Jon Tawn. Here I'll focus purely on uni-variate extreme value theory.</p>
-<p>So what is Extreme Value Theory? it tries to answer the question how rare is it to see an event that's this Extreme. This is applied in various ways, for example suppose your engineering a power station. Ideally you don't want this at any risk what so ever of flooding as water mixing with electricity won't end well as Lancaster locals know well (See picture below). However it's rare that there's zero chance of something happening so suppose city planners are happy as long as it's safe up to to. about a 1 in 1000 year event. This is where Extreme value theory comes in. <img src="../img/power.png" alt="Lancaster&#39;s power station after December 2015 floods; left Lancaster without power and closed Lancaster University." /></p>
+<p>So what is Extreme Value Theory? It tries to answer the question how rare is it to see an event that's this Extreme. This is applied in various ways, for example suppose you’re engineering a power station. Ideally you don't want this at any risk what so ever of flooding as water mixing with electricity won't end well as Lancaster locals know well (See picture below). However it's rare that there's zero chance of something happening so suppose city planners are happy as long as it's safe up to to. about a 1 in 1000 year event. This is where Extreme value theory comes in. <img src="../../post/img/power.png" alt="Lancaster&#39;s power station after December 2015 floods; left Lancaster without power and closed Lancaster University." /></p>
 <div id="application-areas" class="section level3">
 <h3>Application areas</h3>
 <p>We we're introduced to a example of comparing track runners over different times &amp; distances. There's two applications of EVT in this area that I found very interesting; the first being that you can see inconsistencies in the data which may to due to foul play such as drug use; the second being that you can actually answer the question how good was this athlete given that they came from this time and this event (i.e comparing an 800m track runner from 1981 to a 100m track runner from 2009).</p>
@@ -228,12 +228,12 @@
 </div>
 <div id="methods" class="section level3">
 <h3>Methods</h3>
-<p>Here I'll give a quick overview of how to carry out an analysis on some data. So how do we go from data to this kind of analysis, There are two approaches that we were introduced to for uni-variate data, "Block Maxima/Minima"" and "Threshold". I'll focus on the Block Maxima approach as it makes sense for rain however there's multiple pros and cons to both methods. Block Maxima is illustrated below:</p>
+<p>Here I'll give a quick overview of how to carry out an analysis on some data. So how do we go from data to this kind of analysis, There are two approaches that we introduced to univariate data, “Block Maxima/Minima” and “Threshold”. I'll focus on the Block Maxima approach as it makes sense for rain however there's multiple pros and cons to both methods. Block Maxima is illustrated below:</p>
 <div class="figure">
 <img src="../img/ext_blockmax.png" alt="Taking the maximum in each year in a time series. We reduce our time-series of say 50 points each year for 20 years down to just 20 data points." />
 <p class="caption">Taking the maximum in each year in a time series. We reduce our time-series of say 50 points each year for 20 years down to just 20 data points.</p>
 </div>
-<p>After we do this block maxima reduction to our dataset we have a asymptotic result kind of similar to the Central Limit Theorem referred to as "Extremal Types theorem":</p>
+<p>After we do this block maxima reduction to our dataset we have a asymptotic result kind of similar to the Central Limit Theorem referred to as “Extremal Types theorem”:</p>
 <p><span class="math display">\[ X_1,X_2,...X_n \sim_{IID} F \text{ and } M_n=MAX(X_1,X_2,X_3,...X_n)\]</span></p>
 <p>implies that</p>
 <p><span class="math display">\[ M_n\sim GEV(\mu, \sigma, \epsilon)\]</span></p>
@@ -331,7 +331,7 @@
   
       <a class="read-next-story prev" style="no-cover" href="../../blog/2017-12-12-whats-going-on-here/">
           <section class="post">
-              <h2>What&#39;s Going on here?</h2>
+              <h2>What&#39;s Going on Here?</h2>
           </section>
       </a>
   

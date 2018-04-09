@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Object Orientated Programming in R"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Object Orientated Programming in R &middot; STOR-i Blog" />
+  	<meta property="og:site_name" content="STOR-i Blog" />
+  	<meta property="og:url" content="/blog/2018-03-20-object-orientated-programming-in-r/" />
+
+    
+        
+            <meta property="og:image" content="/images/cover.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2018-03-20T00:00:00Z" />
+
+    
+    <meta property="article:tag" content="R" />
+    
+    
+
+    <title>Object Orientated Programming in R &middot; STOR-i Blog</title>
+
+    
+    <meta name="description" content="Sadly this is another post aimed at R users. Recently I’ve been looking into how to make my programming cleaner, one of the main ways of doing this is a method " />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="../../images/favicon.ico">
+	  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="../../css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/nav.css" />
+
+    
+
+    
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    
+      
+          <link href="../../index.xml" rel="alternate" type="application/rss+xml" title="STOR-i Blog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.35" />
+
+    <link rel="canonical" href="../../blog/2018-03-20-object-orientated-programming-in-r/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": ,
+        "logo": /images/logo.png
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": /images/logo.png,
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": http://lancaster.ac.uk/~omalley3,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": Statistics &amp; Operations Student
+        
+    },
+    "headline": Object Orientated Programming in R,
+    "name": Object Orientated Programming in R,
+    "wordCount": 1199,
+    "timeRequired": "PT6M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": /blog/2018-03-20-object-orientated-programming-in-r/,
+    "datePublished": 2018-03-20T00:00Z,
+    "dateModified": 2018-03-20T00:00Z,
+    
+    "keywords": R,
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": /blog/2018-03-20-object-orientated-programming-in-r/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="http://lancaster.ac.uk/~omalley3">My Website</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="../../">Blog Entries</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="http://www.lancaster.ac.uk/stor-i/">STOR-i Website</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="../../index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="../../"><img src="../../images/logo.png" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Object Orientated Programming in R</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2018-03-20T00:00:00Z">
+            Mar 20, 2018
+          </time>
+        
+         
+          <span class="post-tag small"><a href="//tags/r/">#R</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>Sadly this is another post aimed at R users. Recently I’ve been looking into how to make my programming cleaner, one of the main ways of doing this is a method called Object Orientated Programming. It’s used by most of the functions in R for example look at the output from a linear model.</p>
+<pre class="r"><code>#Fit linear model
+lm_cars &lt;- lm(mpg~.,data=mtcars)
+is.object(lm_cars)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>isS4(lm_cars)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>class(lm_cars)</code></pre>
+<pre><code>## [1] &quot;lm&quot;</code></pre>
+<p>So the first check in the example above checks if lm.cars is an object, the second check says if it’s particularly a S4 object. In the case of lm it’s a S3 object which has class “lm” which is the one I’ll be focusing on here. I’ll briefly highlight the difference between the two at the end of the blog post.</p>
+<p>So why do we actually need objects, well it’s quite obvious when we return anything from a function we’d like to be able to define how that return is used. For example the actually lm function doesn’t just come alone, if you have a look at <a href="https://github.com/wch/r-source/blob/trunk/src/library/stats/R/lm.R">lm sourcecode</a>. You’ll see that at the top an actual function called lm is returned, however it also has some weird functions which I’ve never actually directly called like lm.plot, lm.print and so on, note lm.“something”. So how do we actually use these. When I run the code <code>plot(lm)</code> what R does is it first goes and finds what’s stored in <code>class(lm.cars)</code> then tries to find out if there’s any function that’s designed for that class. The way it does this is that it goes and searchs for functions labeled “class”.plot. as you’ve seen in the source code there is such a function so it just uses that.</p>
+<div id="how-do-you-use-it" class="section level2">
+<h2>How do you use it?</h2>
+<p>Okay so the example in this post I’m going to use a function that simply returns the mean and standard deviation of some data. It takes in data then gives out a list, a list is just like a vector but every element of the list can hold virtually any data structure in R, also you can name its’ elements. At the end of each code block I’ll print out the function output just to see how it changes each time.</p>
+<pre class="r"><code>mean_sd &lt;- function(data){
+  output = list(m = mean(data), s = sd(data), data=data)
+  return(output)
+}
+ret &lt;- mean_sd(mtcars$mpg)
+is.object(ret)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code># Simply typing the variable name on its&#39; own prints it
+ret</code></pre>
+<pre><code>## $m
+## [1] 20.09062
+## 
+## $s
+## [1] 6.026948
+## 
+## $data
+##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
+## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
+## [29] 15.8 19.7 15.0 21.4</code></pre>
+<p>So I’ve ran the function and as you can see unlike lm it’s not an object. So lets just try assigning a class to the return just to see what happens:</p>
+<pre class="r"><code>#Adds a class to ret
+class(ret) &lt;-&quot;mean_sd&quot;
+#TRUE means it&#39;s now an object
+is.object(ret) </code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>ret</code></pre>
+<pre><code>## $m
+## [1] 20.09062
+## 
+## $s
+## [1] 6.026948
+## 
+## $data
+##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
+## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
+## [29] 15.8 19.7 15.0 21.4
+## 
+## attr(,&quot;class&quot;)
+## [1] &quot;mean_sd&quot;</code></pre>
+<pre class="r"><code>#print lm_cars to compare
+lm_cars</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = mpg ~ ., data = mtcars)
+## 
+## Coefficients:
+## (Intercept)          cyl         disp           hp         drat  
+##    12.30337     -0.11144      0.01334     -0.02148      0.78711  
+##          wt         qsec           vs           am         gear  
+##    -3.71530      0.82104      0.31776      2.52023      0.65541  
+##        carb  
+##    -0.19942</code></pre>
+<p>Now, much like lm, meansd has a class with the name of the function which made it. The actual name isn’t important; however, its’ usually the function name. When we print lm_cars, it’s clear that the print is much clearer and actually displays the relevant information. So, lets make a function which does the same for our class:</p>
+<pre class="r"><code>print.mean_sd &lt;- function(object, digits= max(3L, getOption(&quot;digits&quot;) - 3L)){
+  string &lt;- paste(&quot;Mean:&quot;, round(object$m,digits))
+  print(string)
+  string2 &lt;-paste(&quot;Standard Deviation:&quot;, round(object$s, digits))
+  print(string2)
+  #This function doesn&#39;t return anything so it&#39;s good practice to make it return a copy of the object
+  #just incase someone calls ret=print(ret) it will not change ret.
+  #invisible makes it so object wont be printed if it&#39;s not assigned
+ invisible(object)
+}
+
+print(ret) # Same output as ret</code></pre>
+<pre><code>## [1] &quot;Mean: 20.0906&quot;
+## [1] &quot;Standard Deviation: 6.0269&quot;</code></pre>
+<p>Lets summarise up by creating the mean_sd function the way it should have been made in the first place:</p>
+<pre class="r"><code>mean_sd &lt;- function(data){
+  output = list(m = mean(data), s = sd(data), data=data)
+  return(output)
+}
+
+print.mean_sd &lt;- function(object, digits= max(3L, getOption(&quot;digits&quot;) - 3L)){
+  string &lt;- paste(&quot;Mean:&quot;, round(object$m,digits))
+  print(string)
+  string2 &lt;-paste(&quot;Standard Deviation:&quot;, round(object$s, digits))
+  print(string2)
+
+ invisible(object)
+}
+
+plot.mean_sd &lt;- function(object, digits= max(3L, getOption(&quot;digits&quot;) - 3L)){
+  title &lt;- paste(&quot;Mean:&quot;, round(object$m,digits),&quot;Standard Deviation:&quot;, round(object$s, digits))
+  hist(object$data, main=title)
+  invisible(object)
+}</code></pre>
+<p>Now run the example:</p>
+<pre class="r"><code>ret &lt;- mean_sd(mtcars$mpg)
+class(ret) &lt;-&quot;mean_sd&quot;
+plot(ret)</code></pre>
+<p><img src="../../post/2018-03-20-object-orientated-programming-in-r_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<pre class="r"><code>ret</code></pre>
+<pre><code>## [1] &quot;Mean: 20.0906&quot;
+## [1] &quot;Standard Deviation: 6.0269&quot;</code></pre>
+<p>Voila! The function now simply makes an object then functions that are associated with this object are used instead of the default ones.</p>
+<p>These functions that are specifically made for a class are more correctly known as methods. Idea is you have an object and the methods can then update your objects elements. Hence the name of the function.</p>
+</div>
+<div id="why-is-it-useful" class="section level2">
+<h2>Why is it useful</h2>
+<p>Often I’m shocked when I go to use someone elses code, it’s often hard to navigate, they make a function then do all the analysis (i.e. plotting, summary statistics etc) in a main script outside of the function. The two main problems are:</p>
+<ul>
+<li>It’s hard to find the problematic code.</li>
+<li>Often they have 10 pieces of code repeated about 10 times. For example, Set a parameter; run the function; 5 lines associated with plotting.</li>
+</ul>
+<p>So now suppose their code is split up in a object orientated way. The first point can be solved by just running each individual method then quickly checking the output, or even better if the problem is with plotting you just check the plot function. Second point this is obviously solved you’ve reduced those repetive parts to 2-3 lines just calling relative methods. Furthermore if you fix one of those 5 lines of plotting you only change it in the actual method, rather than changing it all 10 times in the original messy code.</p>
+<p>Another point is it hugely reduces how much you need to remember. Say you’re working without object orientated programming. If you’re using all these functions in R like lm, rf, anova, etc. and for each one you need to know the function name for plotting, summary of the output. That would quickly add up to thousands of function names.</p>
+<p>I’ve only started using object orientated programming recently. I’ve desribed the main useful parts here, I notice that now my code is much neater. It does take a bit more effort to code up what you’re doing as you really need to think, but on the other hand I can come back to your code a month later and understand it very easily and know how to adapt it.</p>
+</div>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="../../" style="background-image: url(/images/logo.png)"><span class="hidden">Mike's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="../../">Mike</a></h4>
+  
+  <p>Statistics &amp; Operations Student</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">STOR-i, Lancaster University</span>
+    <span class="author-link icon-link"><a href="http://lancaster.ac.uk/~omalley3">http://lancaster.ac.uk/~omalley3</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Object%20Orientated%20Programming%20in%20R&nbsp;-&nbsp;STOR-i%20Blog&amp;url=%2fblog%2f2018-03-20-object-orientated-programming-in-r%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fblog%2f2018-03-20-object-orientated-programming-in-r%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fblog%2f2018-03-20-object-orientated-programming-in-r%2f&amp;description=Object%20Orientated%20Programming%20in%20R"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fblog%2f2018-03-20-object-orientated-programming-in-r%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="../../blog/2018-03-20-supervised-or-not/">
+          <section class="post">
+              <h2>Supervised or not?</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">STOR-i Blog</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../../js/index.js"></script>
+    
+</body>
+</html>
+

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    
+    
+        <meta name="twitter:card" content="summary"/>
+    
+
+
+
+<meta name="twitter:title" content="Supervised or not?"/>
+<meta name="twitter:description" content=""/>
+<meta name="twitter:site" content="@"/>
+
+
+
+  	<meta property="og:title" content="Supervised or not? &middot; STOR-i Blog" />
+  	<meta property="og:site_name" content="STOR-i Blog" />
+  	<meta property="og:url" content="/blog/2018-04-07-supervised-or-not/" />
+
+    
+        
+            <meta property="og:image" content="/images/cover.jpg"/>
+        
+    
+
+    
+    <meta property="og:description" content="" />
+  	<meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2018-04-07T00:00:00Z" />
+
+    
+    <meta property="article:tag" content="Regression" />
+    
+    <meta property="article:tag" content="Classification" />
+    
+    <meta property="article:tag" content="Clustering" />
+    
+    
+
+    <title>Supervised or not? &middot; STOR-i Blog</title>
+
+    
+    <meta name="description" content="MACHINE LEARNING!!! So, if you’ve not heard of machine learning yet, you probably havn’t been watching any tv the last decade. Problem is machine learning is ab" />
+    
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="../../images/favicon.ico">
+	  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png" />
+
+    <link rel="stylesheet" type="text/css" href="../../css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/nav.css" />
+
+    
+
+    
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+    
+      
+          <link href="../../index.xml" rel="alternate" type="application/rss+xml" title="STOR-i Blog" />
+      
+      
+    
+    <meta name="generator" content="Hugo 0.35" />
+
+    <link rel="canonical" href="../../blog/2018-04-07-supervised-or-not/" />
+
+    
+      
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": ,
+        "logo": /images/logo.png
+    },
+    "author": {
+        "@type": "Person",
+        "name": ,
+        
+        "image": {
+            "@type": "ImageObject",
+            "url": /images/logo.png,
+            "width": 250,
+            "height": 250
+        }, 
+        
+        "url": http://lancaster.ac.uk/~omalley3,
+        "sameAs": [
+            
+            
+             
+             
+             
+             
+             
+            
+        ],
+        "description": Statistics &amp; Operations Student
+        
+    },
+    "headline": Supervised or not?,
+    "name": Supervised or not?,
+    "wordCount": 959,
+    "timeRequired": "PT5M",
+    "inLanguage": {
+      "@type": "Language",
+      "alternateName": en
+    },
+    "url": /blog/2018-04-07-supervised-or-not/,
+    "datePublished": 2018-04-07T00:00Z,
+    "dateModified": 2018-04-07T00:00Z,
+    
+    "keywords": Regression, Classification, Clustering,
+    "description": ,
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": /blog/2018-04-07-supervised-or-not/
+    }
+}
+    </script>
+    
+
+
+    
+
+    
+
+    
+</head>
+<body class="nav-closed">
+
+  <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        
+        
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="http://lancaster.ac.uk/~omalley3">My Website</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="../../">Blog Entries</a>
+            </li>
+        
+            
+            <li class="nav-opened" role="presentation">
+            	<a href="http://www.lancaster.ac.uk/stor-i/">STOR-i Website</a>
+            </li>
+        
+        
+    </ul>
+
+    
+    <a class="subscribe-button icon-feed" href="../../index.xml">Subscribe</a>
+    
+</div>
+<span class="nav-cover"></span>
+
+
+ <div class="site-wrapper">
+
+
+
+<header class="main-header post-head no-cover">
+  <nav class="main-nav clearfix">
+
+
+  
+      <a class="blog-logo" href="../../"><img src="../../images/logo.png" alt="Home" /></a>
+  
+  
+      <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
+  
+  </nav>
+</header>
+
+
+
+<main class="content" role="main">
+
+
+
+
+  <article class="post post">
+
+    <header class="post-header">
+        <h1 class="post-title">Supervised or not?</h1>
+        <small></small>
+
+        <section class="post-meta">
+        
+          <time class="post-date" datetime="2018-04-07T00:00:00Z">
+            Apr 7, 2018
+          </time>
+        
+         
+          <span class="post-tag small"><a href="//tags/regression/">#Regression</a></span>
+         
+          <span class="post-tag small"><a href="//tags/classification/">#Classification</a></span>
+         
+          <span class="post-tag small"><a href="//tags/clustering/">#Clustering</a></span>
+         
+        </section>
+    </header>
+
+    <section class="post-content">
+      <p>MACHINE LEARNING!!! So, if you’ve not heard of machine learning yet, you probably havn’t been watching any tv the last decade. Problem is machine learning is absoulutely massive field. This is the intro to a series of blogposts I plan on doing on various areas in machine learning, more specifically statistically backed methods therefore I call it statistical learning. In this blogpost I aim to break down the two main areas that are generally focused on. I also give an applied example of each area.</p>
+<p>So I have dataset and I want to do some modelling of it, statistical learning has a very large tool box, generally the first goal is to narrow down what tools you can use. To do this you have to ask a few questions to yourself. This usually is completely down to the structure of your data and what information is present. Here I’ll be focusing more on the what information is prsent side.</p>
+<p>Supervised learning is focused on problems where you have the answer for some of your data. An example which you may already know of is linear regression, there’s a dataset of potentially thousands of predictor variables <span class="math inline">\(x_i\)</span> and then for each one of these points there’s a response variable <span class="math inline">\(y_i\)</span>. Datasets that have this response variable are called “labeled”. Methods which make use of this response variable are known as supervised methods. Generally want to find a model <span class="math inline">\(f(x)\)</span> which will then do a pretty good job at predicting <span class="math inline">\(y\)</span>. Hence the name supervised, we’re supervising our method by telling it that it wants to find <span class="math inline">\(y_i\)</span>.</p>
+<p>On the other hand we have unsupervised learning, it’s where we have these <span class="math inline">\(x_i\)</span> points but there’s no label with the datapoint. In the previous supervised case, most methods use the labels to estimate the function <span class="math inline">\(f(X)\)</span>. In unsupervised learning the methods must instead find their own function. Clustering is one of the most popular methods in this field, it involves splitting the data <span class="math inline">\(x\)</span> into clusters.</p>
+<div id="example---supervised" class="section level2">
+<h2>Example - Supervised:</h2>
+<p>The iris dataset is a classical dataset used in statistics, it contains 4 features, sepal length, sepal width, petal length and petal width. Each observation has the species which it came from, therefore this dataset is labeled so a supervised learning algorithm is ideal. This form of supervised learning is known as classification, this is when the label is a factor rather than a continous number.</p>
+<pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+## 142          6.9         3.1          5.1         2.3  virginica
+## 20           5.1         3.8          1.5         0.3     setosa
+## 84           6.0         2.7          5.1         1.6 versicolor
+## 38           4.9         3.6          1.4         0.1     setosa
+## 87           6.7         3.1          4.7         1.5 versicolor
+## 45           5.1         3.8          1.9         0.4     setosa
+## 7            4.6         3.4          1.4         0.3     setosa
+## 21           5.4         3.4          1.7         0.2     setosa
+## 95           5.6         2.7          4.2         1.3 versicolor
+## 138          6.4         3.1          5.5         1.8  virginica</code></pre>
+<p>Here I’ll just use the features corresponding to sepal, this allows us to easily plot the data, however will probably result in a loss of accuracy. Here we’ll use the simplest supervised learning algorithm, k-nearest neighbours. You specify the number k, then the algorithm finds the k closest points, it then takes all of these as votes for the class label and the majority then is used as the prediction.</p>
+<pre class="r"><code>library(class)
+set.seed(123)
+#Subset the data
+train &lt;- iris[c(1,2)]
+labels  &lt;- iris$Species
+#fit the model
+model &lt;- knn.cv(train=train,cl=labels,k=5)
+##Check % of correct
+#Error if FALSE
+Error &lt;- model!=labels
+print(paste(&quot;Classification Error rate:&quot;,mean(Error)))</code></pre>
+<pre><code>## [1] &quot;Classification Error rate: 0.226666666666667&quot;</code></pre>
+<pre class="r"><code>##Plot
+#iris
+library(ggplot2)</code></pre>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.4.2</code></pre>
+<pre class="r"><code>iris_plot &lt;- ggplot(aes(x=Sepal.Length, y=Sepal.Width, color=Species), data=iris)
+iris_plot+geom_point(aes(shape=Error),size=4)</code></pre>
+<p><img src="../../post/2018-04-07-supervised-or-not_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>The classification error rate is a common measure of how many points were classified wrong. 0 being the best which means every point was classified correctly. I also plotted the in</p>
+</div>
+<div id="example---unsupervised" class="section level2">
+<h2>Example - unsupervised</h2>
+<p>Here I give an example of clustering I’ll use geyser dataset which includes measurements from the old faithful geyser. it involves 2 measurements,“eruptions” how long an Eruption lasted and “waiting” time until the next eruption.</p>
+<pre class="r"><code>faith_plot &lt;- ggplot(aes(x=waiting,y=eruptions), data=faithful)+geom_point()
+faith_plot</code></pre>
+<p><img src="../../post/2018-04-07-supervised-or-not_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>As we can see from the plot there’s 2 clear groups of data with a few random points inbetween Here I’ll use a similar method to before, it’s called k-means. For this method you specify k like before which is how many clusters the algorithm will choose, then it’ll find k centers. A point will be assigned to the closest center. Looking at the picture it’s quite clear that k=2 is a good choice.</p>
+<pre class="r"><code>model &lt;- kmeans(faithful,2)
+Cluster_assignment &lt;- as.factor(model$cluster) 
+ggplot(aes(x=waiting,y=eruptions,color=Cluster_assignment), data=faithful)+geom_point()</code></pre>
+<p><img src="../../post/2018-04-07-supervised-or-not_files/figure-html/unnamed-chunk-4-1.png" width="672" /> As you can see the k-means algorithm split the eruptions as we’d expect, one with high times and one with low times. This problem is quite trivial as there’s only two dimensions, it’s easy to see that a rule like “split if waiting time is over 70” would do just as well. When you get onto problems with more features it becomes much more difficult to seperate clusters; therefore, more advanced analysis than just looking at a plot must be used.</p>
+</div>
+<div id="summary" class="section level2">
+<h2>Summary</h2>
+<p>One of the clear difficulty with unsupervised methods, you don’t know the answer. This makes it extremely difficult to say how good a solution is and often you’ll have two possible solutions which work equally as well but you must choose one. Whereas in supervised you can easily test how well the method does just by looking at the answer that’s in your dataset i.e the classification error rate we used. There’s also hybrid method where the data is a mixture of labeled and non labled points known as semi-supervised methods.</p>
+<p>A good book thats free which is basically a dictionary and guide book to using these methods can be found at <a href="http://www-bcf.usc.edu/~gareth/ISL/">An introduction to Statistical learning</a></p>
+</div>
+
+    </section>
+
+
+  <footer class="post-footer">
+
+
+    
+
+
+
+
+
+
+
+
+<figure class="author-image">
+    <a class="img" href="../../" style="background-image: url(/images/logo.png)"><span class="hidden">Mike's Picture</span></a>
+</figure>
+
+
+<section class="author">
+  <h4><a href="../../">Mike</a></h4>
+  
+  <p>Statistics &amp; Operations Student</p>
+  
+  <div class="author-meta">
+    <span class="author-location icon-location">STOR-i, Lancaster University</span>
+    <span class="author-link icon-link"><a href="http://lancaster.ac.uk/~omalley3">http://lancaster.ac.uk/~omalley3</a></span>
+  </div>
+</section>
+
+
+
+
+    
+<section class="share">
+  <h4>Share this post</h4>
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Supervised%20or%20not%3f&nbsp;-&nbsp;STOR-i%20Blog&amp;url=%2fblog%2f2018-04-07-supervised-or-not%2f"
+      onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+      <span class="hidden">Twitter</span>
+  </a>
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fblog%2f2018-04-07-supervised-or-not%2f"
+      onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+      <span class="hidden">Facebook</span>
+  </a>
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fblog%2f2018-04-07-supervised-or-not%2f&amp;description=Supervised%20or%20not%3f"
+      onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
+      <span class="hidden">Pinterest</span>
+  </a>
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fblog%2f2018-04-07-supervised-or-not%2f"
+     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+      <span class="hidden">Google+</span>
+  </a>
+</section>
+
+
+
+    
+
+
+
+
+
+
+
+  </footer>
+</article>
+
+</main>
+
+
+  <aside class="read-next">
+  
+  
+      <a class="read-next-story prev" style="no-cover" href="../../blog/2018-03-20-object-orientated-programming-in-r/">
+          <section class="post">
+              <h2>Object Orientated Programming in R</h2>
+          </section>
+      </a>
+  
+</aside>
+
+
+
+    <footer class="site-footer clearfix">
+        <section class="copyright"><a href="">STOR-i Blog</a> </section>
+        
+        <section class="poweredby">Proudly generated by <a class="icon-hugo" href="http://gohugo.io">HUGO</a>, with <a class="icon-theme" href="https://github.com/vjeantet/hugo-theme-casper">Casper</a> theme</section>
+        
+    </footer>
+    </div>
+
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="../../js/index.js"></script>
+    
+</body>
+</html>
+

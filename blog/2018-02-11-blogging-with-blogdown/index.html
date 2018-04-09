@@ -235,9 +235,9 @@ qplot(cars$dist, cars$speed, xlab=&quot;Distance&quot;, ylab=&quot;Speed&quot;, 
 
 <p><img src="../../post/2018-02-09-goodbye-wordpress-hello-blogdown_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 
-<p>I know this doesn&rsquo;t seem like much of a big difference but, when you&rsquo;re doing it for 5+ plots and, you decide you want to change something in a plot the Rmd way is much nicer. On top of that Rmd makes adding in equations for more technical blog posts a breeze, you can literally copy and paste over latex code.</p>
+<p>I know this doesn&rsquo;t seem like much of a big difference but, when you&rsquo;re doing it for 5+ plots and, you decide you want to change something in a plot the Rmd way is much nicer. On top of that Rmd makes adding in equations for more technical blog posts a breeze, you can literally copy and paste over LaTeX code.</p>
 
-<p>In order to use blogdown you first need to learn R markdown, it&rsquo;s extremely easy to learn especially if you&rsquo;re already familiar with latex or html, just have a look at (2). R markdown takes some easy to write code called markdown (extremely clean compared to HTML), with blocks of r code. It then parses the document using knitr and runs your R code then outputs a document just like the webpage you&rsquo;re currently reading. The original reason I learned it was for handing in labs for courses, was much easier than copying plots over to word/LaTeX.</p>
+<p>In order to use blogdown you first need to learn R markdown, it&rsquo;s extremely easy to learn especially if you&rsquo;re already familiar with LaTeX or html, just have a look at (2). R markdown takes some easy to write code called markdown (extremely clean compared to HTML), with blocks of r code. It then parses the document using knitr and runs your R code then outputs a document just like the webpage you&rsquo;re currently reading. The original reason I learned it was for handing in labs for courses, was much easier than copying plots over to word/LaTeX.</p>
 
 <h3 id="blogdown">Blogdown</h3>
 
@@ -279,7 +279,7 @@ All the boxes are fairly self explanatory, the only one I&rsquo;d say is slightl
 <li><p>theme: Contains templates regarding the theme you selected for your website, mostly .html, .css and .js files. Playing with this one can break your website and a lot of the templates contain some strange code you don&rsquo;t usually due to some options we put in the config file. The two changes you may need to make if you chose one of the less supported themes is:</p>
 
 <ul>
-<li>Adding in some code into &ldquo;layouts/partials/header.html&rdquo; to allow a javascript file called mathjax. This enables Rmd to use latex code.</li>
+<li>Adding in some code into &ldquo;layouts/partials/header.html&rdquo; to allow a javascript file called mathjax. This enables Rmd to use LaTeX code.</li>
 <li>Altering default.md if you have trouble with your &ldquo;add post&rdquo; template.</li>
 </ul></li>
 
@@ -374,6 +374,13 @@ All the boxes are fairly self explanatory, the only one I&rsquo;d say is slightl
 
 
   <aside class="read-next">
+  
+      <a class="read-next-story" style="no-cover" href="../../blog/2018-03-20-supervised-or-not/">
+          <section class="post">
+              <h2>Supervised or not?</h2>
+              
+          </section>
+      </a>
   
   
       <a class="read-next-story prev" style="no-cover" href="../../blog/2018-02-05-changepoints--sensor-data/">

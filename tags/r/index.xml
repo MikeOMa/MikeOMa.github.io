@@ -6,10 +6,20 @@
     <description>Recent content in R on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 11 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Object Orientated Programming in R</title>
+      <link>/blog/2018-03-20-object-orientated-programming-in-r/</link>
+      <pubDate>Tue, 20 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018-03-20-object-orientated-programming-in-r/</guid>
+      <description>Sadly this is another post aimed at R users. Recently I’ve been looking into how to make my programming cleaner, one of the main ways of doing this is a method called Object Orientated Programming. It’s used by most of the functions in R for example look at the output from a linear model.
+#Fit linear modellm_cars &amp;lt;- lm(mpg~.,data=mtcars)is.object(lm_cars)## [1] TRUEisS4(lm_cars)## [1] FALSEclass(lm_cars)## [1] &amp;quot;lm&amp;quot;So the first check in the example above checks if lm.</description>
+    </item>
     
     <item>
       <title>Blogging with blogdown</title>

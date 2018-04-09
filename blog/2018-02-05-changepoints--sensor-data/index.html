@@ -108,7 +108,7 @@
     },
     "headline": Changepoints &amp; Sensor Data,
     "name": Changepoints &amp; Sensor Data,
-    "wordCount": 589,
+    "wordCount": 588,
     "timeRequired": "PT3M",
     "inLanguage": {
       "@type": "Language",
@@ -225,13 +225,13 @@
 <p><img src="../img/run.png" alt="The picture on the left doesn't have the mean of the generating process drawn in, the right does." />
 <em>The picture on the left doesn&rsquo;t have the mean of the generating process drawn in, the right does.</em></p>
 
-<p>I generated the data by taking three different possible states: Walking (mean speed 4, variance of speed 1), Jogging (mean 7, variance 2) or Running (mean 10, variance 4). For each of these states I sampled a point from a normal distribution for each second and changed paces as time goes on. What changepoint analysis aims to do is look at the time series as a whole and answer two questions</p>
+<p>I generated the data by taking three different possible states: walking (mean speed 4, variance of speed 1), jogging (mean 7, variance 2) or running (mean 10, variance 4). For each of these states I sampled a point from a normal distribution for each second and changed paces as time goes on. What changepoint analysis aims to do is look at the time series as a whole and answer two questions</p>
 
 <p>How many changepoints is there?
 Where&rsquo;s the most likely place for them to be?
 I tested two methods binary segmentation (Fast but approximate) and segment neighborhood (slow but exact). For both methods I told them to look for changes in both mean and variance and a maximum of 8 changepoints.</p>
 
-<p>What happened was that binary segmentation falsely detected a changepoint at t=3 but did the rest almost exactly (total of 5 seconds in error). However segment neighborhood detected the exact results.</p>
+<p>The results show binary segmentation falsely detected a changepoint at t=3 but did the rest almost exactly (total of 5 seconds in error). However segment neighborhood detected the exact results.</p>
 
 <p>With a dataset of this size the difference in speed hardly matters however when we get to larger datasets speed becomes a very important issue. This is where PELT (1) comes in which is shown to be almost as fast as binary segmentation but nearly always gives a more accurate solution.</p>
 
