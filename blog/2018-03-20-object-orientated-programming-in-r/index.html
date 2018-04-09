@@ -224,7 +224,7 @@ is.object(lm_cars)</code></pre>
 <pre class="r"><code>class(lm_cars)</code></pre>
 <pre><code>## [1] &quot;lm&quot;</code></pre>
 <p>So the first check in the example above checks if lm.cars is an object, the second check says if it’s particularly a S4 object. In the case of lm it’s a S3 object which has class “lm” which is the one I’ll be focusing on here. I’ll briefly highlight the difference between the two at the end of the blog post.</p>
-<p>So why do we actually need objects, well it’s quite obvious when we return anything from a function we’d like to be able to define how that return is used. For example the actually lm function doesn’t just come alone, if you have a look at <a href="https://github.com/wch/r-source/blob/trunk/src/library/stats/R/lm.R">lm sourcecode</a>. You’ll see that at the top an actual function called lm is returned, however it also has some weird functions which I’ve never actually directly called like lm.plot, lm.print and so on, note lm.“something”. So how do we actually use these. When I run the code <code>plot(lm)</code> what R does is it first goes and finds what’s stored in <code>class(lm.cars)</code> then tries to find out if there’s any function that’s designed for that class. The way it does this is that it goes and searchs for functions labeled “class”.plot. as you’ve seen in the source code there is such a function so it just uses that.</p>
+<p>So why do we actually need objects, well it’s quite obvious when we return anything from a function we’d like to be able to define how that return is used. For example the actually lm function doesn’t just come alone, if you have a look at <a href="https://github.com/wch/r-source/blob/trunk/src/library/stats/R/lm.R">lm sourcecode</a>. You’ll see that at the top an actual function called lm is returned; however, it also has some weird functions which I’ve never actually directly called like lm.plot, lm.print and so on, note lm.“something”. So how do we actually use these. When I run the code <code>plot(lm)</code> what R does is it first goes and finds what’s stored in <code>class(lm.cars)</code> then tries to find out if there’s any function that’s designed for that class. The way it does this is that it goes and searchs for functions labeled “class”.plot. as you’ve seen in the source code there is such a function so it just uses that.</p>
 <div id="how-do-you-use-it" class="section level2">
 <h2>How do you use it?</h2>
 <p>Okay so the example in this post I’m going to use a function that simply returns the mean and standard deviation of some data. It takes in data then gives out a list, a list is just like a vector but every element of the list can hold virtually any data structure in R, also you can name its’ elements. At the end of each code block I’ll print out the function output just to see how it changes each time.</p>
@@ -295,7 +295,7 @@ lm_cars</code></pre>
 print(ret) # Same output as ret</code></pre>
 <pre><code>## [1] &quot;Mean: 20.0906&quot;
 ## [1] &quot;Standard Deviation: 6.0269&quot;</code></pre>
-<p>Lets summarise up by creating the mean_sd function the way it should have been made in the first place:</p>
+<p>Lets summarize up by creating the mean_sd function the way it should have been made in the first place:</p>
 <pre class="r"><code>mean_sd &lt;- function(data){
   output = list(m = mean(data), s = sd(data), data=data)
   return(output)
@@ -328,13 +328,16 @@ plot(ret)</code></pre>
 </div>
 <div id="why-is-it-useful" class="section level2">
 <h2>Why is it useful</h2>
-<p>Often I’m shocked when I go to use someone elses code, it’s often hard to navigate, they make a function then do all the analysis (i.e. plotting, summary statistics etc) in a main script outside of the function. The two main problems are:</p>
+<p>Often I’m shocked when I go to use someone code, it’s often hard to navigate, they make a function then do all the analysis (i.e. plotting, summary statistics etc) in a main script outside of the function. The two main problems are:</p>
 <ul>
 <li>It’s hard to find the problematic code.</li>
 <li>Often they have 10 pieces of code repeated about 10 times. For example, Set a parameter; run the function; 5 lines associated with plotting.</li>
 </ul>
-<p>So now suppose their code is split up in a object orientated way. The first point can be solved by just running each individual method then quickly checking the output, or even better if the problem is with plotting you just check the plot function. Second point this is obviously solved you’ve reduced those repetive parts to 2-3 lines just calling relative methods. Furthermore if you fix one of those 5 lines of plotting you only change it in the actual method, rather than changing it all 10 times in the original messy code.</p>
+<p>So, now suppose their code is split up in a object orientated way. The first point can be solved by just running each individual method then quickly checking the output, or even better if the problem is with plotting you just check the plot function. Second point this is obviously solved you’ve reduced those repetive parts to 2-3 lines just calling relative methods. Furthermore if you fix one of those 5 lines of plotting you only change it in the actual method, rather than changing it all 10 times in the original messy code.</p>
 <p>Another point is it hugely reduces how much you need to remember. Say you’re working without object orientated programming. If you’re using all these functions in R like lm, rf, anova, etc. and for each one you need to know the function name for plotting, summary of the output. That would quickly add up to thousands of function names.</p>
+</div>
+<div id="summary" class="section level2">
+<h2>Summary</h2>
 <p>I’ve only started using object orientated programming recently. I’ve desribed the main useful parts here, I notice that now my code is much neater. It does take a bit more effort to code up what you’re doing as you really need to think, but on the other hand I can come back to your code a month later and understand it very easily and know how to adapt it.</p>
 </div>
 
