@@ -6,10 +6,19 @@
     <description>Recent content on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Two Cultures of Data Analysis</title>
+      <link>/blog/2018-03-26-the-two-cultures-of-data-analysis/</link>
+      <pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018-03-26-the-two-cultures-of-data-analysis/</guid>
+      <description>Much of the reading I do tends to end up leading me to many papers which seem to be carried out in the machine learning field rather than statistics. I always ask myself what’s the difference. There’s so much blurring between the two areas like topic modelling which is based off of bayesian statistics but still is worked on primarily by people in the machine learning community which could be classed as either.</description>
+    </item>
     
     <item>
       <title>Object Orientated Programming in R</title>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Statistical Learning on STOR-i Blog</title>
-    <link>/categories/statistical-learning/</link>
-    <description>Recent content in Statistical Learning on STOR-i Blog</description>
+    <title>Machine Learning on STOR-i Blog</title>
+    <link>/tags/machine-learning/</link>
+    <description>Recent content in Machine Learning on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 26 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/categories/statistical-learning/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,16 +18,6 @@
       
       <guid>/blog/2018-03-26-the-two-cultures-of-data-analysis/</guid>
       <description>Much of the reading I do tends to end up leading me to many papers which seem to be carried out in the machine learning field rather than statistics. I always ask myself what’s the difference. There’s so much blurring between the two areas like topic modelling which is based off of bayesian statistics but still is worked on primarily by people in the machine learning community which could be classed as either.</description>
-    </item>
-    
-    <item>
-      <title>Supervised or not?</title>
-      <link>/blog/2018-03-20-supervised-or-not/</link>
-      <pubDate>Tue, 20 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2018-03-20-supervised-or-not/</guid>
-      <description>MACHINE LEARNING!!! So, if you’ve not heard of machine learning yet, you probably haven’t been watching any TV the last decade. Problem is machine learning is absolutely massive field.
-This is the intro to a series of blog posts I plan on doing on various areas in machine learning, more specifically statistically backed methods therefore I call it statistical learning. In this blog post I aim to break down the two main areas that are generally focused on.</description>
     </item>
     
   </channel>
