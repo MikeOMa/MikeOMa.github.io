@@ -34,10 +34,6 @@
     <meta property="article:published_time" content="2018-03-26T00:00:00Z" />
 
     
-    <meta property="article:tag" content="Machine Learning" />
-    
-    <meta property="article:tag" content="No Maths" />
-    
     
 
     <title>The Two Cultures of Data Analysis &middot; STOR-i Blog</title>
@@ -110,8 +106,8 @@
     },
     "headline": The Two Cultures of Data Analysis,
     "name": The Two Cultures of Data Analysis,
-    "wordCount": 596,
-    "timeRequired": "PT3M",
+    "wordCount": 1051,
+    "timeRequired": "PT5M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
@@ -120,7 +116,7 @@
     "datePublished": 2018-03-26T00:00Z,
     "dateModified": 2018-03-26T00:00Z,
     
-    "keywords": Machine Learning, No Maths,
+    
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
@@ -210,16 +206,12 @@
           </time>
         
          
-          <span class="post-tag small"><a href="//tags/machine-learning/">#Machine Learning</a></span>
-         
-          <span class="post-tag small"><a href="//tags/no-maths/">#No Maths</a></span>
-         
         </section>
     </header>
 
     <section class="post-content">
-      <p>Much of the reading I do tends to end up leading me to many papers which seem to be carried out in the machine learning field rather than statistics. I always ask myself what’s the difference. There’s so much blurring between the two areas like topic modelling which is based off of bayesian statistics but still is worked on primarily by people in the machine learning community which could be classed as either. Then there’s areas which fall more in the statistics field like Expectation-Maximization; and the computer science field like neural networks.</p>
-<p>To be honest I don’t have any strong opinions about either, here I’ll just summarize up a few views of other people in the field which I found interesting. Most of if it just added some insight as to where statistics is headed. I suggest paying attention to the years of the quotes as the views tend to change as time goes on. I’ll link the references to sources of the quotes at the bottom so just find the authors pdf if you want to read more around it.</p>
+      <p>Much of the reading I do tends to end up leading me to many papers which seem to be carried out in the machine learning field rather than statistics. I always ask myself what’s the difference. There’s so much blurring between the two areas like topic modelling which is based off of bayesian statistics but still is worked on primarily by people in the machine learning community which could be classed as either. Then there’s areas which fall more in the statistics field like Expectation-Maximization; and the computer science field like neural networks. This lead me to asking why are two fields so different? So I did what anyone would do and went searching around google.</p>
+<p>To be honest I don’t have any strong opinions about either, here I’ll just summarize up a few views of other people in the field which I found interesting. These views are probably now dated as the two fields are changing rapidly. I’ve added a few extra links at the bottom which give very detailed looks on the matter.</p>
 <div id="max-wellings-remarks-dec-2015" class="section level2">
 <h2>Max Wellings remarks Dec-2015</h2>
 <p>Prof. Max Welling is a research chair in machine learning at the University of Amsterdam. He gave his some remarks on “Data Science in the next 50 years”, I found his views extremely interesting and it’s also the most recent work I could find on the topic (Dec - 2015). He notes that that statistics is more focused on “explaining and testing properties of a population from which we see a random sample, machine learning is more concerned with making predictions, even if the prediction can not be explained very well (a.k.a. a black-box prediction)”. Which really explains why the machine learning field has widely adopted deep-learning; Nothing seems to beat it in terms of prediction and it is in most cases a black-box prediction.</p>
@@ -228,13 +220,61 @@
 </div>
 <div id="he-did-ask-for-a-fight-dec-2008" class="section level2">
 <h2>He did ask for a fight… Dec 2008</h2>
-<p>A second resource I found was a machine learning blogpost by Brendan O’Connor whos currently (was not at the time) an assisitant professor in the Information and Computer Sciences at University of Massachusetts Amherst. The title is “Machine Learning and Statistics, fight!” and that’s exactly what he got, a very large thread of comments.</p>
-<p>then resulted in a response by Prof. Andrew Gelman, Columbia University.</p>
+<p>A second resource I found was a machine learning blogpost by Brendan O’Connor whos currently (was not at the time) an assisitant professor in the Information and Computer Sciences at University of Massachusetts Amherst. The title is “Machine Learning and Statistics, fight!” and that’s exactly what he got, a very large thread of comments. This was written almost 10 years ago so the</p>
+<p>One of my favorite aspects of the post is where he says “ML sounds like it’s young, vibrant, interesting to learn, and growing; Stats does not.”. This sums up exactly the problem with statistics, the two are almost the same (in 2008, now the deep learning craze sets a bit of a boundary); however, ML jobs generally pay more, people think it’s cooler and more state of the art. For example my sister works in marketing and she’s always going on about how they use Machine learning; but she thinks that such problems are completely outside the reach of statisticans. There’s a common stigma around statisticans that we only do hypothesis testing, the part of making intersting insights of data is often associated with our machine learning counterparts.</p>
+<p>This is mainly a problem with the marketing of statistics. The fields hugely overlap; however, when you’re going for a job the statistican will most likely be paid less than the machine learning practicioner even though the skill set is almost identical.</p>
+<p>He also mentions a piles of terms in the post which are quite cool, few of which I list here:</p>
+<table style="width:47%;">
+<colgroup>
+<col width="9%" />
+<col width="37%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Computer Science</th>
+<th>Statistics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Neural Network</td>
+<td>stack of linear functions paired with a wonky, overhyped training algorithm; the combination of which, many years later, still causes confusion.</td>
+</tr>
+<tr class="even">
+<td>Weights</td>
+<td>Parameters</td>
+</tr>
+<tr class="odd">
+<td>Learning</td>
+<td>Fitting</td>
+</tr>
+</tbody>
+</table>
+<div id="andrew-gelman-response-to-brendans-post" class="section level4">
+<h4>Andrew Gelman response to Brendan’s post</h4>
+<p>Prof. Andrew Gelman is a statistician at Columbia university. He posted a response which lead to another blast of arguements in the comments, the last two of which I found quite interesting.</p>
+<p>Simon Blomberg posted in a comment</p>
+<blockquote>
+<p>From R’s fortunes package: To paraphrase provocatively, ‘machine learning is statistics minus any checking of models and assumptions’. - Brian D. Ripley (about the difference between machine learning and statistics) useR! 2004, Vienna (May 2004)</p>
+</blockquote>
+<p>which then resulted in a response by Prof. Andrew Gelman:</p>
+<blockquote>
+<blockquote>
+<p>In that case, maybe we should get rid of checking of models and assumptions more often. Then maybe we’d be able to solve some of the problems that the machine learning people can solve but we can’t!</p>
+</blockquote>
+</blockquote>
+<p>I find this quite interesting as in statistics we generally focus on models which we can explain the fitting for in a statistically justified way and make sure that insights can be made once the model is fit. Whereas, in ML they gnerally just go with the philosiphy that if a model predicts well it’s good</p>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>I just talked about two posts I found online, there’s many more debates. Jerome H. Friedman’s data mining summary is a very detailed view on the matter; however, it’s slightly outdated. There’s also a post named <a href="http://hunch.net/?p=318">“The Stat’s Handicap”</a> which points out some disadvantages of statistics such as the amplitude of publications PhD students generally end up with.</p>
 <ul>
 <li><a href="http://statweb.stanford.edu/~jhf/ftp/dm-stat.pdf">Data Mining and Statistics: What’s the connection? - Jerome H. Friedman</a></li>
 <li><a href="https://staff.fnwi.uva.nl/m.welling/wp-content/uploads/papers/WhyMLneedsStatistics.pdf">Are Machine Learning and Statistics Complementary - Max Welling</a></li>
-<li><a href="https://staff.fnwi.uva.nl/m.welling/wp-content/uploads/papers/WhyMLneedsStatistics.pdf">Machine Learning and Statistics, fight! - Brendan O’Connor</a></li>
+<li><a href="https://brenocon.com/blog/2008/12/statistics-vs-machine-learning-fight/">Machine Learning and Statistics, fight! - Brendan O’Connor</a></li>
 <li><a href="http://andrewgelman.com/2008/12/03/machine_learnin/">Andrew Gelman’s response</a></li>
+<li><a href="http://hunch.net/?p=318">The Stats Handicap</a></li>
 </ul>
 </div>
 
