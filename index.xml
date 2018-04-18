@@ -27,7 +27,7 @@
       
       <guid>/blog/2018-03-20-object-orientated-programming-in-r/</guid>
       <description>Sadly this is another post aimed at R users. Recently I’ve been looking into how to make my programming cleaner, one of the main ways of doing this is a method called Object Orientated Programming. It’s used by most of the functions in R for example look at the output from a linear model.
-#Fit linear modellm_cars &amp;lt;- lm(mpg~.,data=mtcars)is.object(lm_cars)## [1] TRUEisS4(lm_cars)## [1] FALSEclass(lm_cars)## [1] &amp;quot;lm&amp;quot;So the first check in the example above checks if lm.</description>
+#Fit linear model lm_cars &amp;lt;- lm(mpg~.,data=mtcars) is.object(lm_cars) ## [1] TRUE isS4(lm_cars) ## [1] FALSE class(lm_cars) ## [1] &amp;quot;lm&amp;quot; So the first check in the example above checks if lm.</description>
     </item>
     
     <item>
