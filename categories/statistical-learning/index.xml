@@ -17,7 +17,7 @@
       <pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>/blog/2018-03-26-the-two-cultures-of-data-analysis/</guid>
-      <description>Much of the reading I do tends to end up leading me to many papers which seem to be carried out in the machine learning field rather than statistics. I always ask myself what’s the difference. There’s so much blurring between the two areas like topic modelling which is based off of bayesian statistics but still is worked on primarily by people in the machine learning community which could be classed as either.</description>
+      <description>Much of the reading I do tends to end up leading me to many papers which seem to be carried out in the machine learning field rather than statistics. I always ask myself what’s the difference. There’s so much blurring between the two areas like topic modelling which is based off of bayesian statistics but still is worked on primarily by people in the machine learning community. Then, there’re areas which fall more in the statistics field like Expectation-Maximization; and the computer science field like neural networks.</description>
     </item>
     
     <item>

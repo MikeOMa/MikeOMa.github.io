@@ -6,10 +6,30 @@
     <description>Recent content in Statistics on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Feb 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Wait... random isn&#39;t randomf</title>
+      <link>/blog/2018-04-18-wait...-random-isnt-randomf/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018-04-18-wait...-random-isnt-randomf/</guid>
+      <description>Here’s a nice little mind blower: it’s actually incredibly hard to find and measure something that is truly random. This is actually a bit of a problem as there’s so many places where random numbers are needed, in this blog post I’ll use a few running examples where random number generation is needed:
+The gambling sector, pretty much everywhere from shuffling cards in online poker (and in casinos for the particularly high tech ones) to slot machines for obvious reasons.</description>
+    </item>
+    
+    <item>
+      <title>Wait... random isn&#39;t randomf</title>
+      <link>/blog/2018-04-18-wait...-random-isnt-randomf/</link>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018-04-18-wait...-random-isnt-randomf/</guid>
+      <description>Here&amp;rsquo;s a nice little mind blower: it&amp;rsquo;s actually incredibly hard to find and measure something that is truly random. This is actually a bit of a problem as there&amp;rsquo;s so many places where random numbers are needed, in this blog post I&amp;rsquo;ll use a few running examples where random number generation is needed:
+ The gambling sector, pretty much everywhere from shuffling cards in online poker (and in casinos for the particularly high tech ones) to slot machines for obvious reasons.</description>
+    </item>
     
     <item>
       <title>Changepoints &amp; Sensor Data</title>
