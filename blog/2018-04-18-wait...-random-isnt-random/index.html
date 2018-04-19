@@ -12,15 +12,15 @@
 
 
 
-<meta name="twitter:title" content="Wait... random isn&#39;t randomf"/>
+<meta name="twitter:title" content="Wait... random isn&#39;t random"/>
 <meta name="twitter:description" content=""/>
 <meta name="twitter:site" content="@"/>
 
 
 
-  	<meta property="og:title" content="Wait... random isn&#39;t randomf &middot; STOR-i Blog" />
+  	<meta property="og:title" content="Wait... random isn&#39;t random &middot; STOR-i Blog" />
   	<meta property="og:site_name" content="STOR-i Blog" />
-  	<meta property="og:url" content="/blog/2018-04-18-wait...-random-isnt-randomf/" />
+  	<meta property="og:url" content="/blog/2018-04-18-wait...-random-isnt-random/" />
 
     
         
@@ -36,10 +36,10 @@
     
     
 
-    <title>Wait... random isn&#39;t randomf &middot; STOR-i Blog</title>
+    <title>Wait... random isn&#39;t random &middot; STOR-i Blog</title>
 
     
-    <meta name="description" content="Here&amp;rsquo;s a nice little mind blower: it&amp;rsquo;s actually incredibly hard to find and measure something that is truly random. This is actually a bit of a prob" />
+    <meta name="description" content="Here’s a nice little mind blower: it’s actually incredibly hard to find and measure something that is truly random. This is actually a bit of a problem as there" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -65,7 +65,7 @@
     
     <meta name="generator" content="Hugo 0.39" />
 
-    <link rel="canonical" href="../../blog/2018-04-18-wait...-random-isnt-randomf/" />
+    <link rel="canonical" href="../../blog/2018-04-18-wait...-random-isnt-random/" />
 
     
       
@@ -104,15 +104,15 @@
         "description": Statistics &amp; Operations Student
         
     },
-    "headline": Wait... random isn&#39;t randomf,
-    "name": Wait... random isn&#39;t randomf,
-    "wordCount": 771,
+    "headline": Wait... random isn&#39;t random,
+    "name": Wait... random isn&#39;t random,
+    "wordCount": 839,
     "timeRequired": "PT4M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
     },
-    "url": /blog/2018-04-18-wait...-random-isnt-randomf/,
+    "url": /blog/2018-04-18-wait...-random-isnt-random/,
     "datePublished": 2018-04-18T00:00Z,
     "dateModified": 2018-04-18T00:00Z,
     
@@ -120,7 +120,7 @@
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": /blog/2018-04-18-wait...-random-isnt-randomf/
+        "@id": /blog/2018-04-18-wait...-random-isnt-random/
     }
 }
     </script>
@@ -207,7 +207,7 @@
   <article class="post post">
 
     <header class="post-header">
-        <h1 class="post-title">Wait... random isn&#39;t randomf</h1>
+        <h1 class="post-title">Wait... random isn&#39;t random</h1>
         <small></small>
 
         <section class="post-meta">
@@ -221,60 +221,49 @@
     </header>
 
     <section class="post-content">
-      
-
-<p>Here&rsquo;s a nice little mind blower: it&rsquo;s actually incredibly hard to find and measure something that is truly random. This is actually a bit of a problem as there&rsquo;s so many places where random numbers are needed, in this blog post I&rsquo;ll use a few running examples where random number generation is needed:</p>
-
-<ol>
+      <p>Here’s a nice little mind blower: it’s actually incredibly hard to find and measure something that is truly random. This is actually a bit of a problem as there’s so many places where random numbers are needed, in this blog post I’ll use a few running examples where random number generation is needed:</p>
+<ol style="list-style-type: decimal">
 <li>The gambling sector, pretty much everywhere from shuffling cards in online poker (and in casinos for the particularly high tech ones) to slot machines for obvious reasons.</li>
-<li>Simulation, when it&rsquo;s not deterministic you need random numbers. Similarly, video games can be seen as big simulations and generally require random numbers.</li>
+<li>Simulation, when it’s not deterministic you need random numbers. Similarly, video games can be seen as big simulations and generally require random numbers.</li>
 <li>Random assignment, making sure that everything is fair when say assigning placebos in a clinical trial.</li>
 </ol>
-
-<p>##Motivation
-It seems like it shouldn&rsquo;t be a problem, like everything seems random so it shouldn&rsquo;t be too hard to just get a random number. This is true, there&rsquo;re loads of approaches which you can take to obtain random numbers such as:</p>
-
+<div id="motivation" class="section level2">
+<h2>Motivation</h2>
+<p>It seems like it shouldn’t be a problem, like everything seems random so it shouldn’t be too hard to just get a random number. This is true, there’re loads of approaches which you can take to obtain random numbers such as:</p>
 <ul>
 <li>Measuring radioactivity, place a radioactive isotope in front of a device called a Geiger counter, observing the time between clicks is random. PRO: The numbers are truly random CONS: Health issues of sitting near a radioactive isotope every time you need a random number.</li>
-<li>Observing human behaviour, people are random, if you observe things like extremely small movements of a mouse or time between keystrokes to the microsecond can be used. PRO: Can get massive amounts of random numbers if you have a database of people willing to supply their keystrokes. CON: Good luck getting even one person to agree to giving you open access to their computer, you&rsquo;ll need thousands to get the amount of random numbers most applications need.</li>
+<li>Observing human behaviour, people are random, if you observe things like extremely small movements of a mouse or time between keystrokes to the microsecond can be used. PRO: Can get massive amounts of random numbers if you have a database of people willing to supply their keystrokes. CON: Good luck getting even one person to agree to giving you open access to their computer, you’ll need thousands to get the amount of random numbers most applications need.</li>
 </ul>
-
-<p>Both of these methods are highly limited in speed and require a lot of legwork to get up and running.</p>
-
-<h2 id="pseudorandom-numbers">Pseudorandom numbers</h2>
-
-<p>So, how do we actually get these random numbers quickly? You&rsquo;ll notice that nearly every programming language has a command to generate random numbers for example runif in R, this all done with a method called pseudorandom number generation, it generates sequences of numbers which look random but in fact they&rsquo;re not. These numbers are completely determined by a mathematical formula which is designed to produce sequences of random looking numbers.</p>
-
-<p>Fact is that for applications like simulation and video games we really don&rsquo;t care as long as they look random which makes. Take applications like security and gambling, if these numbers are in any way predictable then there&rsquo;s a massive problem with random number generation. Take an online slot machine, if someone figured out the underlying random number generator then they could just bet small when they know they&rsquo;re not going to win; then, when a winning spin is coming up they just put a big bet on. Therefore, if gambling companies go for pseudorandom numbers they should really ensure that it&rsquo;s virtually impossible to reverse engineer.</p>
-
-<h2 id="example-generator-linear-congruential-generator">Example generator &ndash; Linear congruential generator</h2>
-
-<p>Here I&rsquo;ll give an example of one of the earliest pseudorandom number generator. It&rsquo;s defined as follows
-$$X<em>n=(aX</em>{n-1}+c)mod m$$</p>
-
-<p>so you have to specify
-* a the multiplier
-* m the modulus
-* c the increment
-* $X_0$ a value to start the algorithm</p>
-
-<p>In this generator, the next value is completely determined by the value that came before it. I find this quite mind blowing as it&rsquo;s one of the most commonly used random number generators. It creates sequences that look very random. Aditionally you can use some fancy mathematical proofs that gaurentee that no two random numbers will be repeated within a sequence of $m$ numbers. So if you set m to be massive like $2^{32}$ this can make very long sequences of unique numbers.</p>
-
-<p>Generators like this are good for Random assignment and simulation as they give us billions of numbers which statistically indistiguisibly for truely random numbers (if we choose the right formula and numbers). I&rsquo;ll now show you one problem with such a generator.</p>
-
-<h2 id="cryptographically-secure-pseudorandom-number-generator">Cryptographically secure pseudorandom number generator</h2>
-
-<p>Cryptographically secure basicly means you can give someone as many numbers as they like and they&rsquo;ll never be able to reverse engineer the generator. This is exactly what is needed for applications to gambling and security. The linear congruential generator above does not satisfy this property take the numbers:</p>
-
+<p>Both of these methods are highly limited in speed and require a lot of legwork to get up and running. ## Pseudorandom numbers So, how do we actually get these random numbers quickly? You’ll notice that nearly every programming language has a command to generate random numbers for example runif in R, this all done with a method called pseudorandom number generation, it generates sequences of numbers which look random but in fact they’re not. These numbers are completely determined by a mathematical formula which is designed to produce sequences of random looking numbers.</p>
+<p>Fact is that for applications like simulation and video games we really don’t care as long as they look random which makes. Take applications like security and gambling, if these numbers are in any way predictable then there’s a massive problem with random number generation. Take an online slot machine, if someone figured out the underlying random number generator then they could just bet small when they know they’re not going to win; then, when a winning spin is coming up they just put a big bet on. Therefore, if gambling companies go for pseudorandom numbers they should really ensure that it’s virtually impossible to reverse engineer.</p>
+</div>
+<div id="example-generator-linear-congruential-generator" class="section level2">
+<h2>Example generator – Linear congruential generator</h2>
+<p>Here I’ll give an example of one of the earliest pseudorandom number generator. It’s defined as follows <span class="math display">\[X_n=(aX_{n-1}+c)mod m\]</span></p>
+<p>so you have to specify</p>
+<ul>
+<li>a the multiplier</li>
+<li>m the modulus</li>
+<li>c the increment</li>
+<li><span class="math inline">\(X_0\)</span> a value to start the algorithm</li>
+</ul>
+<p>In this generator, the next value is completely determined by the value that came before it. I find this quite mind blowing as it’s one of the most commonly used random number generators. It creates sequences that look very random. Aditionally you can use some fancy mathematical proofs that gaurentee that no two random numbers will be repeated within a sequence of <span class="math inline">\(m\)</span> numbers. So if you set m to be massive like <span class="math inline">\(2^{32}\)</span> this can make very long sequences of unique numbers.</p>
+<p>Generators like this are good for Random assignment and simulation as they give us billions of numbers which statistically indistiguisibly for truely random numbers (if we choose the right formula and numbers). I’ll now talk about one problem with such a generator. ## Cryptographically secure pseudorandom number generator</p>
+<p>Cryptographically secure basicly means you can give someone as many numbers as they like and they’ll never be able to reverse engineer the generator. This is exactly what is needed for applications to gambling and security. The linear congruential generator above does not satisfy this property take the numbers:</p>
 <blockquote>
 <p>5, 1, 3, 2, 6, 4, 5, 1</p>
 </blockquote>
-
 <p>You can easily find that a linear congruential generator with the values c=0, a=3, m=7 generates this. Sadly even when you pick larger numbers the same is true the formula can be reverse engineered; Therefore, more advanced formula are required. Algorithms that have this secure property are significantly harder to find.</p>
-
-<p>##Conclusion</p>
-
-<p><img src="../../post/img/dilbert.jpg" alt="Problem with random number generators." /></p>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>There’s a generally a tradeoff between what properties you’d like in your generator. Computational efficiency usually results in a loss in security and true randomness. High-security results in a slow algorithm but for the applications it’s needed for that’s probably fine. True random numbers are great… but they’re also more painful to obtain than is justified in most uses.</p>
+<p>Below is an extremely accurate dilbert</p>
+<div class="figure">
+<img src="../post/img/dilbert.jpg" alt="Problem with random number generators." />
+<p class="caption">Problem with random number generators.</p>
+</div>
+</div>
 
     </section>
 
@@ -313,19 +302,19 @@ $$X<em>n=(aX</em>{n-1}+c)mod m$$</p>
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Wait...%20random%20isn%27t%20randomf&nbsp;-&nbsp;STOR-i%20Blog&amp;url=%2fblog%2f2018-04-18-wait...-random-isnt-randomf%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Wait...%20random%20isn%27t%20random&nbsp;-&nbsp;STOR-i%20Blog&amp;url=%2fblog%2f2018-04-18-wait...-random-isnt-random%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fblog%2f2018-04-18-wait...-random-isnt-randomf%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fblog%2f2018-04-18-wait...-random-isnt-random%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fblog%2f2018-04-18-wait...-random-isnt-randomf%2f&amp;description=Wait...%20random%20isn%27t%20randomf"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fblog%2f2018-04-18-wait...-random-isnt-random%2f&amp;description=Wait...%20random%20isn%27t%20random"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fblog%2f2018-04-18-wait...-random-isnt-randomf%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fblog%2f2018-04-18-wait...-random-isnt-random%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -342,8 +331,8 @@ $$X<em>n=(aX</em>{n-1}+c)mod m$$</p>
 
 
 var disqus_config = function () {
-this.page.url = "\/blog\/2018-04-18-wait...-random-isnt-randomf\/";  
-this.page.identifier = "\/blog\/2018-04-18-wait...-random-isnt-randomf\/"; 
+this.page.url = "\/blog\/2018-04-18-wait...-random-isnt-random\/";  
+this.page.identifier = "\/blog\/2018-04-18-wait...-random-isnt-random\/"; 
 };
 
 (function() { 
@@ -369,13 +358,6 @@ s.setAttribute('data-timestamp', +new Date());
 
 
   <aside class="read-next">
-  
-      <a class="read-next-story" style="no-cover" href="../../blog/2018-04-18-wait...-random-isnt-random/">
-          <section class="post">
-              <h2>Wait... random isn&#39;t random</h2>
-              
-          </section>
-      </a>
   
   
       <a class="read-next-story prev" style="no-cover" href="../../blog/2018-03-26-the-two-cultures-of-data-analysis/">

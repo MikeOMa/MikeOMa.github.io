@@ -108,7 +108,7 @@
     },
     "headline": Object Orientated Programming in R,
     "name": Object Orientated Programming in R,
-    "wordCount": 1199,
+    "wordCount": 1204,
     "timeRequired": "PT6M",
     "inLanguage": {
       "@type": "Language",
@@ -234,11 +234,11 @@ is.object(lm_cars)</code></pre>
 <pre><code>## [1] FALSE</code></pre>
 <pre class="r"><code>class(lm_cars)</code></pre>
 <pre><code>## [1] &quot;lm&quot;</code></pre>
-<p>So the first check in the example above checks if lm.cars is an object, the second check says if it’s particularly a S4 object. In the case of lm it’s a S3 object which has class “lm” which is the one I’ll be focusing on here. I’ll briefly highlight the difference between the two at the end of the blog post.</p>
-<p>So why do we actually need objects, well it’s quite obvious when we return anything from a function we’d like to be able to define how that return is used. For example the actually lm function doesn’t just come alone, if you have a look at <a href="https://github.com/wch/r-source/blob/trunk/src/library/stats/R/lm.R">lm sourcecode</a>. You’ll see that at the top an actual function called lm is returned; however, it also has some weird functions which I’ve never actually directly called like lm.plot, lm.print and so on, note lm.“something”. So how do we actually use these. When I run the code <code>plot(lm)</code> what R does is it first goes and finds what’s stored in <code>class(lm.cars)</code> then tries to find out if there’s any function that’s designed for that class. The way it does this is that it goes and searchs for functions labeled “class”.plot. as you’ve seen in the source code there is such a function so it just uses that.</p>
+<p>So the first check in the example above checks if lm.cars is an object, the second check says if it’s particularly a S4 object. In the case of lm, it’s a S3 object which has class “lm” which is the one I’ll be focusing on in this blog post. I’ll briefly highlight the difference between the two at the end of the blog post.</p>
+<p>So why do we actually need objects, well it’s quite obvious when we return anything from a function we’d like to be able to define how that return is used. For example the actually lm function doesn’t just come alone, if you have a look at <a href="https://github.com/wch/r-source/blob/trunk/src/library/stats/R/lm.R">lm sourcecode</a>. You’ll see that at the top an actual function called lm is returned; however, it also has some weird functions which I’ve never actually directly called like lm.plot, lm.print and so on, note lm.“something”. So how do we actually use these. When I run the code <code>plot(lm)</code> what R does is it first goes and finds what’s stored in <code>class(lm.cars)</code> then tries to find out if there’s any function that’s designed for that class. The way it does this is: it goes and searches for functions labelled “class”.plot. As you’ve seen in the source code there is such a function so it just uses that.</p>
 <div id="how-do-you-use-it" class="section level2">
 <h2>How do you use it?</h2>
-<p>Okay so the example in this post I’m going to use a function that simply returns the mean and standard deviation of some data. It takes in data then gives out a list, a list is just like a vector but every element of the list can hold virtually any data structure in R, also you can name its’ elements. At the end of each code block I’ll print out the function output just to see how it changes each time.</p>
+<p>Okay so the example in this post I’m going to use a function that simply returns the mean and standard deviation of some data. It takes in data then gives out a list, a list is just like a vector but every element of the list can hold virtually any data structure in R, also you can name its elements. At the end of each code block I’ll print out the function output just to see how it changes each time.</p>
 <pre class="r"><code>mean_sd &lt;- function(data){
   output = list(m = mean(data), s = sd(data), data=data)
   return(output)
@@ -258,7 +258,7 @@ ret</code></pre>
 ##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
 ## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
 ## [29] 15.8 19.7 15.0 21.4</code></pre>
-<p>So I’ve ran the function and as you can see unlike lm it’s not an object. So lets just try assigning a class to the return just to see what happens:</p>
+<p>So I’ve run the function and as you can see unlike lm it’s not an object. So lets just try assigning a class to the return just to see what happens:</p>
 <pre class="r"><code>#Adds a class to ret
 class(ret) &lt;-&quot;mean_sd&quot;
 #TRUE means it&#39;s now an object
@@ -291,24 +291,25 @@ lm_cars</code></pre>
 ##    -3.71530      0.82104      0.31776      2.52023      0.65541  
 ##        carb  
 ##    -0.19942</code></pre>
-<p>Now, much like lm, meansd has a class with the name of the function which made it. The actual name isn’t important; however, its’ usually the function name. When we print lm_cars, it’s clear that the print is much clearer and actually displays the relevant information. So, lets make a function which does the same for our class:</p>
+<p>Now, much like lm, meansd has a class with the name of the function which made it. The actual name isn’t important; however, its usually the function name. When we print lm_cars, it’s clear that the print is much clearer and actually displays the relevant information. So, lets make a function which does the same for our class:</p>
 <pre class="r"><code>print.mean_sd &lt;- function(object, digits= max(3L, getOption(&quot;digits&quot;) - 3L)){
   string &lt;- paste(&quot;Mean:&quot;, round(object$m,digits))
   print(string)
   string2 &lt;-paste(&quot;Standard Deviation:&quot;, round(object$s, digits))
   print(string2)
   #This function doesn&#39;t return anything so it&#39;s good practice to make it return a copy of the object
-  #just incase someone calls ret=print(ret) it will not change ret.
-  #invisible makes it so object wont be printed if it&#39;s not assigned
+  #just encase someone calls ret=print(ret) it will not change ret.
+  #invisible makes it so object won&#39;t be printed if it&#39;s not assigned
  invisible(object)
 }
 
 print(ret) # Same output as ret</code></pre>
 <pre><code>## [1] &quot;Mean: 20.0906&quot;
 ## [1] &quot;Standard Deviation: 6.0269&quot;</code></pre>
-<p>Lets summarize up by creating the mean_sd function the way it should have been made in the first place:</p>
+<p>Let;s summarize up by creating the mean_sd function the way it should have been made in the first place:</p>
 <pre class="r"><code>mean_sd &lt;- function(data){
   output = list(m = mean(data), s = sd(data), data=data)
+  class(output) &lt;-&quot;mean_sd&quot;
   return(output)
 }
 
@@ -328,14 +329,15 @@ plot.mean_sd &lt;- function(object, digits= max(3L, getOption(&quot;digits&quot;
 }</code></pre>
 <p>Now run the example:</p>
 <pre class="r"><code>ret &lt;- mean_sd(mtcars$mpg)
-class(ret) &lt;-&quot;mean_sd&quot;
+
 plot(ret)</code></pre>
 <p><img src="../../post/2018-03-20-object-orientated-programming-in-r_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<pre class="r"><code>ret</code></pre>
+<pre class="r"><code>#Equivalent to print
+ret</code></pre>
 <pre><code>## [1] &quot;Mean: 20.0906&quot;
 ## [1] &quot;Standard Deviation: 6.0269&quot;</code></pre>
 <p>Voila! The function now simply makes an object then functions that are associated with this object are used instead of the default ones.</p>
-<p>These functions that are specifically made for a class are more correctly known as methods. Idea is you have an object and the methods can then update your objects elements. Hence the name of the function.</p>
+<p>These functions that are specifically made for a class are more correctly known as methods. Idea is you have an object and the methods can then update your objects elements. Hence, the name of the function.</p>
 </div>
 <div id="why-is-it-useful" class="section level2">
 <h2>Why is it useful</h2>
@@ -344,12 +346,12 @@ plot(ret)</code></pre>
 <li>It’s hard to find the problematic code.</li>
 <li>Often they have 10 pieces of code repeated about 10 times. For example, Set a parameter; run the function; 5 lines associated with plotting.</li>
 </ul>
-<p>So, now suppose their code is split up in a object orientated way. The first point can be solved by just running each individual method then quickly checking the output, or even better if the problem is with plotting you just check the plot function. Second point this is obviously solved you’ve reduced those repetive parts to 2-3 lines just calling relative methods. Furthermore if you fix one of those 5 lines of plotting you only change it in the actual method, rather than changing it all 10 times in the original messy code.</p>
+<p>So, now suppose their code is split up in an object orientated way. The first point can be solved by just running each individual method then quickly checking the output, or even better if the problem is with plotting you just check the plot function. Second point this is obviously solved you’ve reduced those repetive parts to 2-3 lines just calling relative methods. Furthermore, if you fix one of those 5 lines of plotting you only change it in the actual method, rather than changing it all 10 times in the original messy code.</p>
 <p>Another point is it hugely reduces how much you need to remember. Say you’re working without object orientated programming. If you’re using all these functions in R like lm, rf, anova, etc. and for each one you need to know the function name for plotting, summary of the output. That would quickly add up to thousands of function names.</p>
 </div>
 <div id="summary" class="section level2">
 <h2>Summary</h2>
-<p>I’ve only started using object orientated programming recently. I’ve desribed the main useful parts here, I notice that now my code is much neater. It does take a bit more effort to code up what you’re doing as you really need to think, but on the other hand I can come back to your code a month later and understand it very easily and know how to adapt it.</p>
+<p>I’ve only started using object orientated programming recently. I’ve described the main useful parts here, I notice that now my code is much neater. It does take a bit more effort to code up what you’re doing as you really need to think, but on the other hand I can come back to your code a month later and understand it very easily and know how to adapt it.</p>
 </div>
 
     </section>

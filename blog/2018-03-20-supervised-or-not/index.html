@@ -235,24 +235,24 @@
     <section class="post-content">
       <p>MACHINE LEARNING!!! So, if you’ve not heard of machine learning yet, you probably haven’t been watching any TV the last decade. Problem is machine learning is absolutely massive field.</p>
 <p>This is the intro to a series of blog posts I plan on doing on various areas in machine learning, more specifically statistically backed methods therefore I call it statistical learning. In this blog post I aim to break down the two main areas that are generally focused on. I also give an applied example of each area.</p>
-<p>So I have data set and I want to do some modelling of it. Statistical learning is basically a very large tool box, generally the first goal is to narrow down what tools you can use. To do this you have to ask a few questions to yourself. This usually is completely down to the structure of your data and what information is present. Here I’ll be focusing more on the what information is present side.</p>
-<p>Supervised learning is focused on problems where you have the answer for some of your data. An example which you may already know of is linear regression, there’s a data set of potentially thousands of predictor variables <span class="math inline">\(x_i\)</span> and then for each one of these points there’s a response variable <span class="math inline">\(y_i\)</span>. Data sets that have this response variable are called “labeled”. Methods which make use of this response variable are known as supervised methods. Generally want to find a model <span class="math inline">\(f(x)\)</span> which will then do a pretty good job at predicting <span class="math inline">\(y\)</span>. Hence the name supervised, we’re supervising our method by telling it that it wants to find <span class="math inline">\(y_i\)</span>.</p>
+<p>So I have data set and I want to do some modelling of it. Statistical learning is basically a very large tool box, generally the first goal is to narrow down what tools you can use. To do this you have to ask a few questions to yourself. This is usually completely down to the structure of your data and what information is present. Here I’ll be focusing more on the what information is present side.</p>
+<p>Supervised learning is focused on problems where you have the answer for some of your data. An example which you may already know of is linear regression, there’s a data set of potentially thousands of predictor variables <span class="math inline">\(x_i\)</span> and then for each one of these points there’s a response variable <span class="math inline">\(y_i\)</span>. Data sets that have this response variable are called “labelled”. Methods which make use of this response variable are known as supervised methods. Generally want to find a model <span class="math inline">\(f(x)\)</span> which will then do a pretty good job at predicting <span class="math inline">\(y\)</span>. Hence, the name supervised, we’re supervising our method by telling it that it wants to find <span class="math inline">\(y_i\)</span>.</p>
 <p>On the other hand we have unsupervised learning, it’s where we have these <span class="math inline">\(x_i\)</span> points but there’s no label with the data point. In the previous supervised case, most methods use the labels to estimate the function <span class="math inline">\(f(X)\)</span>. In unsupervised learning the methods must instead find their own function. Clustering is one of the most popular methods in this field, it involves splitting the data <span class="math inline">\(x\)</span> into clusters.</p>
 <div id="example---supervised" class="section level2">
 <h2>Example - Supervised:</h2>
-<p>The iris data set is a classical data set used in statistics, it contains 4 features, sepal length, sepal width, petal length and petal width. Each observation has the species which it came from, therefore this data set is labeled so a supervised learning algorithm is ideal. This form of supervised learning is known as classification, this is when the label is a factor rather than a continuous number.</p>
+<p>The iris data set is a classical data set used in statistics, it contains 4 features, sepal length, sepal width, petal length and petal width. Each observation has the species which it came from, therefore this data set is labelled so a supervised learning algorithm is ideal. This form of supervised learning is known as classification, this is when the label is a factor rather than a continuous number.</p>
 <pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 100          5.7         2.8          4.1         1.3 versicolor
-## 79           6.0         2.9          4.5         1.5 versicolor
-## 72           6.1         2.8          4.0         1.3 versicolor
-## 59           6.6         2.9          4.6         1.3 versicolor
-## 35           4.9         3.1          1.5         0.2     setosa
-## 14           4.3         3.0          1.1         0.1     setosa
-## 27           5.0         3.4          1.6         0.4     setosa
-## 63           6.0         2.2          4.0         1.0 versicolor
-## 26           5.0         3.0          1.6         0.2     setosa
-## 21           5.4         3.4          1.7         0.2     setosa</code></pre>
-<p>Here I’ll just use the features corresponding to sepal, this allows us to easily plot the data, however will probably result in a loss of accuracy. Here we’ll use the simplest supervised learning algorithm, k-nearest neighbors. You specify the number k, then the algorithm finds the k closest points, it then takes all of these as votes for the class label and the majority then is used as the prediction.</p>
+## 20           5.1         3.8          1.5         0.3     setosa
+## 134          6.3         2.8          5.1         1.5  virginica
+## 60           5.2         2.7          3.9         1.4 versicolor
+## 36           5.0         3.2          1.2         0.2     setosa
+## 145          6.7         3.3          5.7         2.5  virginica
+## 116          6.4         3.2          5.3         2.3  virginica
+## 77           6.8         2.8          4.8         1.4 versicolor
+## 74           6.1         2.8          4.7         1.2 versicolor
+## 3            4.7         3.2          1.3         0.2     setosa
+## 84           6.0         2.7          5.1         1.6 versicolor</code></pre>
+<p>Here I’ll just use the features corresponding to sepal, this allows us to easily plot the data, however will probably result in a loss of accuracy. Here we’ll use the simplest supervised learning algorithm, k-nearest neighbours. You specify the number k, then the algorithm finds the k closest points, it then takes all of these as votes for the class label and the majority then is used as the prediction.</p>
 <pre class="r"><code>library(class)
 set.seed(123)
 #Subset the data
@@ -271,15 +271,15 @@ library(ggplot2)
 iris_plot &lt;- ggplot(aes(x=Sepal.Length, y=Sepal.Width, color=Species), data=iris)
 iris_plot+geom_point(aes(shape=Error),size=4)</code></pre>
 <p><img src="../../post/2018-04-07-supervised-or-not_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>The classification error rate is a common measure of how many points were classified wrong. 0 being the best which means every point was classified correctly. I also plotted the in if our classifier correctly predicted the species, as you can see most of the errors tend to occur on the boundaries of the species or where there’s a datapoint in an unexpected place given its’ species.</p>
+<p>The classification error rate is a common measure of how many points were classified wrong. 0 being the best which means every point was classified correctly. I also plotted the in if our classifier correctly predicted the species, as you can see most of the errors tend to occur on the boundaries of the species or where there’s a data point in an unexpected place given its’ species.</p>
 </div>
 <div id="example---unsupervised" class="section level2">
 <h2>Example - unsupervised</h2>
-<p>Here I give an example of clustering I’ll use geyser data set which includes measurements from the old faithful geyser. it involves 2 measurements,“eruptions” how long an Eruption lasted and “waiting” time until the next eruption.</p>
+<p>Here I give an example of clustering I’ll use geyser data set which includes measurements from the old faithful geyser. It involves 2 measurements,“eruptions” how long an Eruption lasted and “waiting” time until the next eruption.</p>
 <pre class="r"><code>faith_plot &lt;- ggplot(aes(x=waiting,y=eruptions), data=faithful)+geom_point()
 faith_plot</code></pre>
 <p><img src="../../post/2018-04-07-supervised-or-not_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-<p>As we can see from the plot there’s 2 clear groups of data with a few random points in between Here I’ll use a similar method to before, it’s called k-means. For this method you specify k like before which is how many clusters the algorithm will choose, then it’ll find k centers. A point will be assigned to the closest center. Looking at the picture it’s quite clear that k=2 is a good choice.</p>
+<p>As we can see from the plot there’s 2 clear groups of data with a few random points in between Here I’ll use a similar method to before, it’s called k-means. For this method you specify k like before which is how many clusters the algorithm will choose, then it’ll find k centres. A point will be assigned to the closest centre. Looking at the picture it’s quite clear that k=2 is a good choice.</p>
 <pre class="r"><code>model &lt;- kmeans(faithful,2)
 Cluster_assignment &lt;- as.factor(model$cluster) 
 ggplot(aes(x=waiting,y=eruptions,color=Cluster_assignment), data=faithful)+geom_point()</code></pre>
@@ -287,7 +287,7 @@ ggplot(aes(x=waiting,y=eruptions,color=Cluster_assignment), data=faithful)+geom_
 </div>
 <div id="summary" class="section level2">
 <h2>Summary</h2>
-<p>There’s a clear difficulty with unsupervised methods, you don’t know the answer. This makes it extremely difficult to say how good a solution is and often you’ll have two possible solutions which work equally as well but you must choose one. Whereas in supervised you can easily test how well the method does just by looking at the answer that’s in your data set i.e the classification error rate we used. There’s also hybrid method where the data is a mixture of labeled and non labeled points known as semi-supervised methods.</p>
+<p>There’s a clear difficulty with unsupervised methods, you don’t know the answer. This makes it extremely difficult to say how good a solution is and often you’ll have two possible solutions which work equally well but you must choose one. Whereas, in supervised you can easily test how well the method does just by looking at the answer that’s in your data set i.e the classification error rate we used. There’s also hybrid method where the data is a mixture of labelled and non labelled points known as semi-supervised methods.</p>
 <p>A good book that’s free which is basically a dictionary and guide book to using these methods can be found at <a href="http://www-bcf.usc.edu/~gareth/ISL/">An introduction to Statistical learning</a>.</p>
 </div>
 
