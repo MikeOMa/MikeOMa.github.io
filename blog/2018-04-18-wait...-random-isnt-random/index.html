@@ -106,7 +106,7 @@
     },
     "headline": Wait... random isn&#39;t random,
     "name": Wait... random isn&#39;t random,
-    "wordCount": 839,
+    "wordCount": 838,
     "timeRequired": "PT4M",
     "inLanguage": {
       "@type": "Language",
@@ -248,7 +248,10 @@
 <li><span class="math inline">\(X_0\)</span> a value to start the algorithm</li>
 </ul>
 <p>In this generator, the next value is completely determined by the value that came before it. I find this quite mind blowing as it’s one of the most commonly used random number generators. It creates sequences that look very random. Aditionally you can use some fancy mathematical proofs that gaurentee that no two random numbers will be repeated within a sequence of <span class="math inline">\(m\)</span> numbers. So if you set m to be massive like <span class="math inline">\(2^{32}\)</span> this can make very long sequences of unique numbers.</p>
-<p>Generators like this are good for Random assignment and simulation as they give us billions of numbers which statistically indistiguisibly for truely random numbers (if we choose the right formula and numbers). I’ll now talk about one problem with such a generator. ## Cryptographically secure pseudorandom number generator</p>
+<p>Generators like this are good for Random assignment and simulation as they give us billions of numbers which statistically indistiguisibly for truely random numbers (if we choose the right formula and numbers). I’ll now talk about one problem with such a generator.</p>
+</div>
+<div id="cryptographically-secure-pseudorandom-number-generator" class="section level2">
+<h2>Cryptographically secure pseudorandom number generator</h2>
 <p>Cryptographically secure basicly means you can give someone as many numbers as they like and they’ll never be able to reverse engineer the generator. This is exactly what is needed for applications to gambling and security. The linear congruential generator above does not satisfy this property take the numbers:</p>
 <blockquote>
 <p>5, 1, 3, 2, 6, 4, 5, 1</p>
@@ -260,7 +263,7 @@
 <p>There’s a generally a tradeoff between what properties you’d like in your generator. Computational efficiency usually results in a loss in security and true randomness. High-security results in a slow algorithm but for the applications it’s needed for that’s probably fine. True random numbers are great… but they’re also more painful to obtain than is justified in most uses.</p>
 <p>Below is an extremely accurate dilbert</p>
 <div class="figure">
-<img src="../post/img/dilbert.jpg" alt="Problem with random number generators." />
+<img src="../img/dilbert.jpg" alt="Problem with random number generators." />
 <p class="caption">Problem with random number generators.</p>
 </div>
 </div>
