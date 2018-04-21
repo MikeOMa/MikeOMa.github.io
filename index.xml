@@ -6,10 +6,28 @@
     <description>Recent content on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AI ain&#39;t here yet!</title>
+      <link>/blog/2018-04-19-ai-aint-here-yet/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018-04-19-ai-aint-here-yet/</guid>
+      <description>This blog post is about a talk given by Prof. Michael Jordan at SysML conference on the 15th of February.. He&amp;rsquo;s a professor of Statistics in the Department of Electrical Engineering and Computer Science and the Department of Statistics at the University of California, Berkeley. He&amp;rsquo;s extremely well known, and has over 130,000 citations on google scholar. This is very much a follow on post from my previous blogpost The Two Cultures of Data Analysis.</description>
+    </item>
+    
+    <item>
+      <title>Validating Models</title>
+      <link>/blog/2018-04-19-validating-models/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018-04-19-validating-models/</guid>
+      <description>Previously I made a blog post on supervised or unsupervised learning, here I’ll continue on and add a bit more detail about how you can check how well your model fits your data. I’ll talk about the two main approachs: using the statistical liklihood approach and the test set approach.</description>
+    </item>
     
     <item>
       <title>Wait... random isn&#39;t random</title>
