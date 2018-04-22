@@ -6,10 +6,20 @@
     <description>Recent content in Classification on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/classification/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>An Intro to Classification</title>
+      <link>/blog/2018-04-22-an-intro-to-classification/</link>
+      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018-04-22-an-intro-to-classification/</guid>
+      <description>So, this is a follow on from the Supervised or not blog post where I looked at how to decide if a problem is supervised or un-supervised and looked at a simple example on the iris dataset. Similar to that post, here I’ll look at classification again but we’ll go more in-depth into some of the issues with classification.
+Linear Discrimminant Analysis  </description>
+    </item>
     
     <item>
       <title>Supervised or not?</title>

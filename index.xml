@@ -6,10 +6,20 @@
     <description>Recent content on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>An Intro to Classification</title>
+      <link>/blog/2018-04-22-an-intro-to-classification/</link>
+      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018-04-22-an-intro-to-classification/</guid>
+      <description>So, this is a follow on from the Supervised or not blog post where I looked at how to decide if a problem is supervised or un-supervised and looked at a simple example on the iris dataset. Similar to that post, here I’ll look at classification again but we’ll go more in-depth into some of the issues with classification.
+Linear Discrimminant Analysis  </description>
+    </item>
     
     <item>
       <title>AI ain&#39;t here yet!</title>
@@ -17,7 +27,7 @@
       <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>/blog/2018-04-19-ai-aint-here-yet/</guid>
-      <description>This blog post is about a talk given by Prof. Michael Jordan at SysML conference on the 15th of February.. He&amp;rsquo;s a professor of Statistics in the Department of Electrical Engineering and Computer Science and the Department of Statistics at the University of California, Berkeley. He&amp;rsquo;s extremely well known, and has over 130,000 citations on google scholar. This is very much a follow on post from my previous blogpost The Two Cultures of Data Analysis.</description>
+      <description>This blog post is about a talk given by Prof. Michael Jordan at SysML conference on the 15th of February.. He&amp;rsquo;s a professor of Statistics in the Department of Electrical Engineering and Computer Science and the Department of Statistics at the University of California, Berkeley. He&amp;rsquo;s extremely well-known, and has over 130,000 citations on google scholar. This is very much a follow on post from my previous blog post The Two Cultures of Data Analysis.</description>
     </item>
     
     <item>
