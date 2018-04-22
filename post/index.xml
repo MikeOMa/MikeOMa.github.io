@@ -2,109 +2,109 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on STOR-i Blog</title>
-    <link>https://mikeom.github.io/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 22 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mikeom.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>An Intro to Classification</title>
-      <link>https://mikeom.github.io/blog/2018-04-22-an-intro-to-classification/</link>
+      <link>/blog/2018-04-22-an-intro-to-classification/</link>
       <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeom.github.io/blog/2018-04-22-an-intro-to-classification/</guid>
+      <guid>/blog/2018-04-22-an-intro-to-classification/</guid>
       <description>So, this is a follow on from the Supervised or not blog post where I looked at how to decide if a problem is supervised or unsupervised and looked at a simple example on the iris dataset. Similar to that post, here I’ll look at classification again, but we’ll go more in-depth into some issues with classification.
 Linear Discriminant Analysis In the previous post we’ve used K-nn, here we’ll use Linear discriminant analysis (LDA) which is slightly more complicated.</description>
     </item>
     
     <item>
       <title>AI ain&#39;t here yet!</title>
-      <link>https://mikeom.github.io/blog/2018-04-19-ai-aint-here-yet/</link>
+      <link>/blog/2018-04-19-ai-aint-here-yet/</link>
       <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeom.github.io/blog/2018-04-19-ai-aint-here-yet/</guid>
+      <guid>/blog/2018-04-19-ai-aint-here-yet/</guid>
       <description>This blog post is about a talk given by Prof. Michael Jordan at SysML conference on the 15th of February.. He&amp;rsquo;s a professor of Statistics in the Department of Electrical Engineering and Computer Science and the Department of Statistics at the University of California, Berkeley. He&amp;rsquo;s extremely well-known, and has over 130,000 citations on google scholar. This is very much a follow on post from my previous blog post The Two Cultures of Data Analysis.</description>
     </item>
     
     <item>
       <title>Wait... random isn&#39;t random</title>
-      <link>https://mikeom.github.io/blog/2018-04-18-wait...-random-isnt-random/</link>
+      <link>/blog/2018-04-18-wait...-random-isnt-random/</link>
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeom.github.io/blog/2018-04-18-wait...-random-isnt-random/</guid>
+      <guid>/blog/2018-04-18-wait...-random-isnt-random/</guid>
       <description>Here’s a nice little mind blower: it’s actually incredibly hard to find and measure something that is truly random. This is actually a bit of a problem as there’s so many places where random numbers are needed. In this blog post I’ll use a few running examples where random number generation is needed:
 The gambling sector, pretty much everywhere from shuffling cards in online poker (and in casinos for the particularly high tech ones) to slot machines for obvious reasons.</description>
     </item>
     
     <item>
       <title>The Two Cultures of Data Analysis</title>
-      <link>https://mikeom.github.io/blog/2018-03-26-the-two-cultures-of-data-analysis/</link>
+      <link>/blog/2018-03-26-the-two-cultures-of-data-analysis/</link>
       <pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeom.github.io/blog/2018-03-26-the-two-cultures-of-data-analysis/</guid>
+      <guid>/blog/2018-03-26-the-two-cultures-of-data-analysis/</guid>
       <description>Much of the reading I do tends to end up leading me to many papers which seem to be carried out in the machine learning field rather than statistics. I always ask myself what’s the difference. There’s so much blurring between the two areas like topic modelling which is based off of Bayesian statistics but still is worked on primarily by people in the machine learning community. Then, there’re areas which fall more in the statistics field like Expectation-Maximization; and the computer science field like neural networks.</description>
     </item>
     
     <item>
       <title>Object Orientated Programming in R</title>
-      <link>https://mikeom.github.io/blog/2018-03-20-object-orientated-programming-in-r/</link>
+      <link>/blog/2018-03-20-object-orientated-programming-in-r/</link>
       <pubDate>Tue, 20 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeom.github.io/blog/2018-03-20-object-orientated-programming-in-r/</guid>
+      <guid>/blog/2018-03-20-object-orientated-programming-in-r/</guid>
       <description>Sadly this is another post aimed at R users. Recently I’ve been looking into how to make my programming cleaner, one of the main ways of doing this is a method called Object Orientated Programming. It’s used by most of the functions in R for example look at the output from a linear model.
 #Fit linear model lm_cars &amp;lt;- lm(mpg~.,data=mtcars) is.object(lm_cars) ## [1] TRUE isS4(lm_cars) ## [1] FALSE class(lm_cars) ## [1] &amp;quot;lm&amp;quot; So the first check in the example above checks if lm.</description>
     </item>
     
     <item>
       <title>Supervised or not?</title>
-      <link>https://mikeom.github.io/blog/2018-03-20-supervised-or-not/</link>
+      <link>/blog/2018-03-20-supervised-or-not/</link>
       <pubDate>Tue, 20 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeom.github.io/blog/2018-03-20-supervised-or-not/</guid>
+      <guid>/blog/2018-03-20-supervised-or-not/</guid>
       <description>MACHINE LEARNING!!! So, if you’ve not heard of machine learning yet, you probably haven’t been watching any TV the last decade. Problem is machine learning is absolutely massive field.
 This is the intro to a series of blog posts I plan on doing on various areas in machine learning, more specifically statistically backed methods therefore I call it statistical learning. In this blog post I aim to break down the two main areas that are generally focused on.</description>
     </item>
     
     <item>
       <title>Blogging with blogdown</title>
-      <link>https://mikeom.github.io/blog/2018-02-11-blogging-with-blogdown/</link>
+      <link>/blog/2018-02-11-blogging-with-blogdown/</link>
       <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeom.github.io/blog/2018-02-11-blogging-with-blogdown/</guid>
+      <guid>/blog/2018-02-11-blogging-with-blogdown/</guid>
       <description>So, I’ve upgraded from the old and outdated ad-riddled wordpress, up to a nice hugo website generated by blogdown, an R package developed by Yihui Xie. You can have a look at my old wordpress here. In my opinion the new blog is a huge improvement and much more efficient too. Here I’ll give some basics on how to get started on making a similar one.
 So why did I update?</description>
     </item>
     
     <item>
       <title>Changepoints &amp; Sensor Data</title>
-      <link>https://mikeom.github.io/blog/2018-02-05-changepoints--sensor-data/</link>
+      <link>/blog/2018-02-05-changepoints--sensor-data/</link>
       <pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeom.github.io/blog/2018-02-05-changepoints--sensor-data/</guid>
+      <guid>/blog/2018-02-05-changepoints--sensor-data/</guid>
       <description>Last week I attended a talk given by Professor Idris Eckley named &amp;ldquo;Making Sense of Sensor Data&amp;rdquo;. One of the main areas I see sensors being used every day is my phone telling me how much I&amp;rsquo;ve walked. There is quite a few problems in sensor data. I&amp;rsquo;ll look at two of them here namely the changepoints in the data and the frequency at which we observe data
 Changepoints The first is quite simple, suppose we observe a long uni-variate time series of some movement measure in a sensor.</description>
     </item>
     
     <item>
       <title>An &#34;Extreme&#34;ly interesting way to view data</title>
-      <link>https://mikeom.github.io/blog/2018-01-26-an-extremely-interesting-way-to-view-data/</link>
+      <link>/blog/2018-01-26-an-extremely-interesting-way-to-view-data/</link>
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeom.github.io/blog/2018-01-26-an-extremely-interesting-way-to-view-data/</guid>
+      <guid>/blog/2018-01-26-an-extremely-interesting-way-to-view-data/</guid>
       <description>If you can’t guess from the title this post is about Extreme Value Theory (EVT). Last week I attended a talk from Professor Jonathan Tawn on some EVT applications and Jenny Wadsworth on some theory in multivariate EVT. I found it particularly interesting as unlike most methods of analysing data we don&#39;t really care about the data which isn&#39;t surprising, instead we focus on modelling the tail ends and unlikely observations.</description>
     </item>
     
     <item>
       <title>What&#39;s Going on Here?</title>
-      <link>https://mikeom.github.io/blog/2017-12-12-whats-going-on-here/</link>
+      <link>/blog/2017-12-12-whats-going-on-here/</link>
       <pubDate>Tue, 12 Dec 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeom.github.io/blog/2017-12-12-whats-going-on-here/</guid>
-      <description>Welcome to my Blog! I am an MRes student at STOR-i, Lancaster University and as part of my development as a student I will be maintaining a blog. STOR-iB is a EPRSC funded Centre for Doctoral Training (CDT), it mainly focuses on applications of STatistics and Operations Research in Industry. To read more about me you can click on the StOR-i Website button in the menu.
+      <guid>/blog/2017-12-12-whats-going-on-here/</guid>
+      <description>Welcome to my Blog! I am an MRes student at STOR-i, Lancaster University and as part of my development as a student I will be maintaining a blog. STOR-i is a EPRSC funded Centre for Doctoral Training (CDT), it mainly focuses on applications of STatistics and Operations Research in Industry. To read more about me you can click on the STOR-i Website button in the menu.
 Anyways about the actual blog.</description>
     </item>
     
