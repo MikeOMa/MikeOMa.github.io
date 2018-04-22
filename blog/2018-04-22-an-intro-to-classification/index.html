@@ -41,7 +41,7 @@
     <title>An Intro to Classification &middot; STOR-i Blog</title>
 
     
-    <meta name="description" content="So, this is a follow on from the Supervised or not blog post where I looked at how to decide if a problem is supervised or un-supervised and looked at a simple " />
+    <meta name="description" content="So, this is a follow on from the Supervised or not blog post where I looked at how to decide if a problem is supervised or unsupervised and looked at a simple e" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -108,8 +108,8 @@
     },
     "headline": An Intro to Classification,
     "name": An Intro to Classification,
-    "wordCount": 62,
-    "timeRequired": "PT1M",
+    "wordCount": 1230,
+    "timeRequired": "PT6M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
@@ -225,9 +225,131 @@
     </header>
 
     <section class="post-content">
-      <p>So, this is a follow on from the <a href="https://mikeoma.github.io/blog/2018-03-20-supervised-or-not/">Supervised or not blog post</a> where I looked at how to decide if a problem is supervised or un-supervised and looked at a simple example on the iris dataset. Similar to that post, here I’ll look at classification again but we’ll go more in-depth into some of the issues with classification.</p>
-<div id="linear-discrimminant-analysis" class="section level2">
-<h2>Linear Discrimminant Analysis</h2>
+      <p>So, this is a follow on from the <a href="https://mikeoma.github.io/blog/2018-03-20-supervised-or-not/">Supervised or not blog post</a> where I looked at how to decide if a problem is supervised or unsupervised and looked at a simple example on the iris dataset. Similar to that post, here I’ll look at classification again, but we’ll go more in-depth into some issues with classification.</p>
+<div id="linear-discriminant-analysis" class="section level2">
+<h2>Linear Discriminant Analysis</h2>
+<p>In the previous post we’ve used K-nn, here we’ll use Linear discriminant analysis (LDA) which is slightly more complicated.</p>
+<p>It makes the assumption that the points in each class <span class="math inline">\(k\)</span> follow a normal distribution with mean <span class="math inline">\(\mu_k\)</span> and covariance matrix <span class="math inline">\(\Sigma\)</span> where the variance is the same across all the groups.</p>
+<p>So this time we have the same setup <span class="math inline">\(n\)</span> data-points <span class="math inline">\(x_i\)</span> and each data-point has a response <span class="math inline">\(y_i\)</span>. The goal is to fit a model which gets P(Y=k| X=x), so the probability that the class is k given the data-point <span class="math inline">\(x\)</span>. We then derive this discriminant function <span class="math inline">\(\delta_j(x_i)\)</span> which basically forms a rule that the j with the highest value of <span class="math inline">\(\delta_j\)</span> will be the most likely class, and therefore our prediction.</p>
+<p>The beauty of this method is that is gives us a probability that our prediction is correct using the formula.</p>
+<div id="why-the-name" class="section level4">
+<h4>Why the name?</h4>
+<p>So the assumption of equal variance and different means actually results in a <em>linear boundary</em> between each class. That is if you draw a line in the feature space <span class="math inline">\(x\)</span> where the prediction rule swaps between assigning the point to class <span class="math inline">\(k_1\)</span> or <span class="math inline">\(k_2\)</span> that line will be a linear one; hence linear discriminant analysis. A similar algorithm is called Quadratic Discriminant Analysis (QDA), which is very similar however we remove the assumption that the covariance matrix is equal across all groups, this results in that separating line to be a quadratic formula.</p>
+</div>
+</div>
+<div id="example-default-dataset" class="section level2">
+<h2>Example: Default Dataset</h2>
+<p>So to show why such a model is more useful and illustrate some issues and factors to consider in classification, I’ll run through an example of LDA on the Default dataset.</p>
+<p>Each row is a person. The dataset has response data:</p>
+<ul>
+<li><span class="math inline">\(y\)</span> called default which says if a person defaults on their loan in future or not</li>
+<li><span class="math inline">\(x_{,1}\)</span> That persons current balance.</li>
+<li><span class="math inline">\(x_{,2}\)</span> That persons’ income.</li>
+<li><span class="math inline">\(x_{,3}\)</span> If the person is a student, here I’ll drop all such entries as we only want to use continuous variables.</li>
+</ul>
+<pre class="r"><code>library(ISLR)
+library(ggplot2)
+head(Default)</code></pre>
+<pre><code>##   default student   balance    income
+## 1      No      No  729.5265 44361.625
+## 2      No     Yes  817.1804 12106.135
+## 3      No      No 1073.5492 31767.139
+## 4      No      No  529.2506 35704.494
+## 5      No      No  785.6559 38463.496
+## 6      No     Yes  919.5885  7491.559</code></pre>
+<pre class="r"><code>#We&#39;ll ignore student variable &amp; entries
+dataset &lt;- Default[c(1,3,4)] 
+dataset &lt;- dataset[-which(
+            Default$student==&quot;Yes&quot;
+            ),]
+n &lt;- nrow(dataset)
+
+ggplot(dataset, aes(x=balance,y=income, color=default))+geom_point()</code></pre>
+<p><img src="../../post/2018-04-22-an-intro-to-classification_files/figure-html/Load%20data-1.png" width="672" /> So there’s our data after removing all the student entries. Now, I’ll fit lda using the mass package.</p>
+<pre class="r"><code>library(MASS)
+
+fit &lt;- lda(default ~ balance+income, data=dataset)
+fit</code></pre>
+<pre><code>## Call:
+## lda(default ~ balance + income, data = dataset)
+## 
+## Prior probabilities of groups:
+##         No        Yes 
+## 0.97080499 0.02919501 
+## 
+## Group means:
+##       balance   income
+## No   744.5044 39993.52
+## Yes 1678.4295 40625.05
+## 
+## Coefficients of linear discriminants:
+##                  LD1
+## balance 2.258357e-03
+## income  2.725668e-06</code></pre>
+<p>The prior probabilities and coefficients are to do with the fitting of the discriminant function, we’ll ignore those here but if you’re interested in the underlying maths have a look at <a href="https://web.stanford.edu/~hastie/ElemStatLearn/">Chapter 5 in Elements of Statistical Learning</a></p>
+<p>The details to note is that the people will higher balances are the ones who are predicted to default.</p>
+<div id="training-error" class="section level4">
+<h4>Training error</h4>
+<p>The first factor we’ll look at is something called the training error, it’s how often the model is correct if you we’re to predict the same <span class="math inline">\(y_i\)</span>’s using the <span class="math inline">\(x_i\)</span> corresponding to it and the model we fit.</p>
+<pre class="r"><code>#obtain predictions 
+train.preds &lt;- predict(fit)
+#find % which are correct
+train.err &lt;- mean(train.preds$class==dataset$default)
+train.err</code></pre>
+<pre><code>## [1] 0.9757653</code></pre>
+<p>This is ridiculously high for a model, but this percentage is often misleading, for example let’s try another model as such, we just say nobody defaults.</p>
+<pre class="r"><code>#Initialize
+dummypred &lt;- dataset$default
+#Change all to No, first entry is no so use that
+dummypred &lt;- dummypred[1]
+mean(dummypred==dataset$default)</code></pre>
+<pre><code>## [1] 0.970805</code></pre>
+<p>Yeah so initially we got just slightly higher than an extremely stupid model, sounds bad right?</p>
+</div>
+<div id="cross-tabulation" class="section level4">
+<h4>Cross Tabulation</h4>
+<p>A better way to analyse classification results is known as a cross tabulation. You simply look at a table like so:</p>
+<pre class="r"><code>## Num of training errors 
+n-sum(train.preds$class==dataset$default)</code></pre>
+<pre><code>## [1] 171</code></pre>
+<pre class="r"><code>#Make crosstab
+table(train.preds$class,dataset$default)</code></pre>
+<pre><code>##      
+##         No  Yes
+##   No  6838  159
+##   Yes   12   47</code></pre>
+<p>This is far more interesting than the number, it shows us the breakdown of the training error so the horizontal axis is the predictions and vertical is the true labels. 12 of our 171 errors occurred by saying No to people who actually do default, the other 159 were saying yes about people who actually don’t default. Now we’ll look at why LDA can be more useful.</p>
+</div>
+<div id="a-benefit-of-lda" class="section level4">
+<h4>A benefit of LDA</h4>
+<p>LDA is a statistical model, if the assumptions turn out to be true (they almost never are) we get a pretty good estimate of$ P(Y=k |X=x )$. Even when they’re not true the estimate is pretty close, so here we’ll look at the probabilities for the mis classified observations.</p>
+<pre class="r"><code>#index of misclassifications
+miscl &lt;-train.preds$class!=dataset$default
+misclYes &lt;- miscl &amp; dataset$default==&quot;Yes&quot;
+misclNo  &lt;- miscl &amp; dataset$default==&quot;No&quot;
+colarray &lt;-rep(&quot;Correct,Yes&quot;,n)
+colarray[dataset$default==&quot;No&quot;] &lt;- &quot;Correct, No&quot;
+colarray[misclYes]&lt;- &quot;Wrong, Yes&quot;
+colarray[misclNo]&lt;- &quot;Wrong, No&quot;
+colarray &lt;- as.factor(colarray)
+ggplot()+geom_boxplot(aes(y=as.numeric(train.preds$posterior[,1]),x=colarray))+ylab(&quot;Probability of No&quot;)</code></pre>
+<p><img src="../../post/2018-04-22-an-intro-to-classification_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>There’s a few things to note from this:</p>
+<ul>
+<li>Correct, No: this is quite good as most of the probabilities are up around 1 meaning we’re usually fairly certain that they won’t default with few cases down lower past 0.9.</li>
+<li>Correct, Yes: most of these probabilities lie in the [0.7,0.6] range of predicting they will default. Meaning we can rarely strongly state that the person will default.</li>
+<li>Wrong, No: when the prediction was wrong but the true answer was no. This is extremely good as nearly all points are in the [0.35,0.45] range of being No which means our model doesn’t do too badly here.</li>
+<li>Wrong, Yes: Most of these have quite a low probability of being Yes which is disappointing as it shows our model does poorly.</li>
+</ul>
+<p>If you went for a rule of something like “if the model is more than 10% uncertain, carry out further checks” may be a good decision. However even the observations which we predicted correctly (Correct, yes, no) have quite a large amount of uncertainty for some observations so this may result in unneccessary work which may be avoided by using a different model or dataset.</p>
+<p>An analysis like this would be impossible with k-nearest neighbours therefore motivating our choice.</p>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2>Conclusion</h2>
+<p>We looked at some basics of classification and how to fit a statistical classifier. Then looked at the training error rate and how it can be misleading by comparing to a dummy classifier. The cross tabulation can often be a good tool to check where the model does poorly and can be used for any classifier.</p>
+<p>The final analysis on the probabilities is quite a desirable property of a model and is often impossible to do with other types of models. It gives you uncertainties about your predictions.</p>
+<p>In the future, I’ll do a brief blog post on model validation and comparison which will move onto the topic of picking which model is best.</p>
 </div>
 
     </section>

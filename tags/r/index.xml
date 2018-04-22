@@ -6,19 +6,10 @@
     <description>Recent content in R on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Mar 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/r/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Validating Models</title>
-      <link>/blog/2018-04-19-validating-models/</link>
-      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/blog/2018-04-19-validating-models/</guid>
-      <description>Previously I made a blog post on supervised or unsupervised learning, here I’ll continue on and add a bit more detail about how you can check how well your model fits your data. I’ll talk about the two main approachs: using the statistical liklihood approach and the test set approach.</description>
-    </item>
     
     <item>
       <title>Object Orientated Programming in R</title>
