@@ -20,7 +20,7 @@
 
   	<meta property="og:title" content="Supervised or not? &middot; STOR-i Blog" />
   	<meta property="og:site_name" content="STOR-i Blog" />
-  	<meta property="og:url" content="/blog/2018-03-20-supervised-or-not/" />
+  	<meta property="og:url" content="https://mikeoma.github.io/blog/2018-03-20-supervised-or-not/" />
 
     
         
@@ -71,7 +71,7 @@
     
     <meta name="generator" content="Hugo 0.39" />
 
-    <link rel="canonical" href="../../blog/2018-03-20-supervised-or-not/" />
+    <link rel="canonical" href="https://mikeoma.github.io/blog/2018-03-20-supervised-or-not/" />
 
     
       
@@ -83,7 +83,7 @@
     "publisher": {
         "@type": "Organization",
         "name": ,
-        "logo": /images/logo.png
+        "logo": https://mikeoma.github.ioimages/logo.png
     },
     "author": {
         "@type": "Person",
@@ -91,7 +91,7 @@
         
         "image": {
             "@type": "ImageObject",
-            "url": /images/logo.png,
+            "url": https://mikeoma.github.ioimages/logo.png,
             "width": 250,
             "height": 250
         }, 
@@ -118,7 +118,7 @@
       "@type": "Language",
       "alternateName": en
     },
-    "url": /blog/2018-03-20-supervised-or-not/,
+    "url": https://mikeoma.github.io/blog/2018-03-20-supervised-or-not/,
     "datePublished": 2018-03-20T00:00Z,
     "dateModified": 2018-03-20T00:00Z,
     
@@ -126,7 +126,7 @@
     "description": ,
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": /blog/2018-03-20-supervised-or-not/
+        "@id": https://mikeoma.github.io/blog/2018-03-20-supervised-or-not/
     }
 }
     </script>
@@ -195,7 +195,7 @@
 
 
   
-      <a class="blog-logo" href="../../"><img src="../../images/logo.png" alt="Home" /></a>
+      <a class="blog-logo" href="https://mikeoma.github.io"><img src="../../images/logo.png" alt="Home" /></a>
   
   
       <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
@@ -223,11 +223,11 @@
           </time>
         
          
-          <span class="post-tag small"><a href="//tags/regression/">#Regression</a></span>
+          <span class="post-tag small"><a href="https://mikeoma.github.io/tags/regression/">#Regression</a></span>
          
-          <span class="post-tag small"><a href="//tags/classification/">#Classification</a></span>
+          <span class="post-tag small"><a href="https://mikeoma.github.io/tags/classification/">#Classification</a></span>
          
-          <span class="post-tag small"><a href="//tags/clustering/">#Clustering</a></span>
+          <span class="post-tag small"><a href="https://mikeoma.github.io/tags/clustering/">#Clustering</a></span>
          
         </section>
     </header>
@@ -242,16 +242,16 @@
 <h2>Example - Supervised:</h2>
 <p>The iris data set is a classical data set used in statistics, it contains 4 features, sepal length, sepal width, petal length and petal width. Each observation has the species which it came from, therefore this data set is labelled so a supervised learning algorithm is ideal. This form of supervised learning is known as classification, this is when the label is a factor rather than a continuous number.</p>
 <pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 86           6.0         3.4          4.5         1.6 versicolor
-## 53           6.9         3.1          4.9         1.5 versicolor
-## 50           5.0         3.3          1.4         0.2     setosa
-## 16           5.7         4.4          1.5         0.4     setosa
-## 98           6.2         2.9          4.3         1.3 versicolor
+## 99           5.1         2.5          3.0         1.1 versicolor
+## 38           4.9         3.6          1.4         0.1     setosa
+## 4            4.6         3.1          1.5         0.2     setosa
+## 105          6.5         3.0          5.8         2.2  virginica
 ## 85           5.4         3.0          4.5         1.5 versicolor
-## 78           6.7         3.0          5.0         1.7 versicolor
-## 94           5.0         2.3          3.3         1.0 versicolor
-## 138          6.4         3.1          5.5         1.8  virginica
-## 1            5.1         3.5          1.4         0.2     setosa</code></pre>
+## 79           6.0         2.9          4.5         1.5 versicolor
+## 129          6.4         2.8          5.6         2.1  virginica
+## 109          6.7         2.5          5.8         1.8  virginica
+## 27           5.0         3.4          1.6         0.4     setosa
+## 66           6.7         3.1          4.4         1.4 versicolor</code></pre>
 <p>Here I’ll just use the features corresponding to sepal, this allows us to easily plot the data, however will probably result in a loss of accuracy. Here we’ll use the simplest supervised learning algorithm, k-nearest neighbours. You specify the number k, then the algorithm finds the k closest points, it then takes all of these as votes for the class label and the majority then is used as the prediction.</p>
 <pre class="r"><code>library(class)
 set.seed(123)
@@ -307,12 +307,12 @@ ggplot(aes(x=waiting,y=eruptions,color=Cluster_assignment), data=faithful)+geom_
 
 
 <figure class="author-image">
-    <a class="img" href="../../" style="background-image: url(/images/logo.png)"><span class="hidden">Mike's Picture</span></a>
+    <a class="img" href="https://mikeoma.github.io" style="background-image: url(/images/logo.png)"><span class="hidden">Mike's Picture</span></a>
 </figure>
 
 
 <section class="author">
-  <h4><a href="../../">Mike</a></h4>
+  <h4><a href="https://mikeoma.github.io">Mike</a></h4>
   
   <p>Statistics &amp; Operations Student</p>
   
@@ -328,19 +328,19 @@ ggplot(aes(x=waiting,y=eruptions,color=Cluster_assignment), data=faithful)+geom_
     
 <section class="share">
   <h4>Share this post</h4>
-  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Supervised%20or%20not%3f&nbsp;-&nbsp;STOR-i%20Blog&amp;url=%2fblog%2f2018-03-20-supervised-or-not%2f"
+  <a class="icon-twitter" style="font-size: 1.4em" href="https://twitter.com/share?text=Supervised%20or%20not%3f&nbsp;-&nbsp;STOR-i%20Blog&amp;url=https%3a%2f%2fmikeoma.github.io%2fblog%2f2018-03-20-supervised-or-not%2f"
       onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
       <span class="hidden">Twitter</span>
   </a>
-  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=%2fblog%2f2018-03-20-supervised-or-not%2f"
+  <a class="icon-facebook" style="font-size: 1.4em" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fmikeoma.github.io%2fblog%2f2018-03-20-supervised-or-not%2f"
       onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
       <span class="hidden">Facebook</span>
   </a>
-  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=%2fblog%2f2018-03-20-supervised-or-not%2f&amp;description=Supervised%20or%20not%3f"
+  <a class="icon-pinterest" style="font-size: 1.4em" href="http://pinterest.com/pin/create/button/?url=https%3a%2f%2fmikeoma.github.io%2fblog%2f2018-03-20-supervised-or-not%2f&amp;description=Supervised%20or%20not%3f"
       onclick="window.open(this.href, 'pinterest-share','width=580,height=296');return false;">
       <span class="hidden">Pinterest</span>
   </a>
-  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=%2fblog%2f2018-03-20-supervised-or-not%2f"
+  <a class="icon-google-plus" style="font-size: 1.4em" href="https://plus.google.com/share?url=https%3a%2f%2fmikeoma.github.io%2fblog%2f2018-03-20-supervised-or-not%2f"
      onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
       <span class="hidden">Google+</span>
   </a>
@@ -357,8 +357,8 @@ ggplot(aes(x=waiting,y=eruptions,color=Cluster_assignment), data=faithful)+geom_
 
 
 var disqus_config = function () {
-this.page.url = "\/blog\/2018-03-20-supervised-or-not\/";  
-this.page.identifier = "\/blog\/2018-03-20-supervised-or-not\/"; 
+this.page.url = "https:\/\/mikeoma.github.io\/blog\/2018-03-20-supervised-or-not\/";  
+this.page.identifier = "https:\/\/mikeoma.github.io\/blog\/2018-03-20-supervised-or-not\/"; 
 };
 
 (function() { 
