@@ -108,7 +108,7 @@
     },
     "headline": Changepoints &amp; Sensor Data,
     "name": Changepoints &amp; Sensor Data,
-    "wordCount": 588,
+    "wordCount": 584,
     "timeRequired": "PT3M",
     "inLanguage": {
       "@type": "Language",
@@ -227,11 +227,11 @@
     <section class="post-content">
       
 
-<p>Last week I attended a talk given by Professor Idris Eckley named &ldquo;Making Sense of Sensor Data&rdquo;. One of the main areas I see sensors being used everyday is my phone telling me how much I&rsquo;ve walked. There is quite a few problems in sensor data. I&rsquo;ll look at two of them here namely the changepoints in the data and the frequency at which we observe data</p>
+<p>Last week I attended a talk given by Professor Idris Eckley named &ldquo;Making Sense of Sensor Data&rdquo;. One of the main areas I see sensors being used every day is my phone telling me how much I&rsquo;ve walked. There is quite a few problems in sensor data. I&rsquo;ll look at two of them here namely the changepoints in the data and the frequency at which we observe data</p>
 
 <h3 id="changepoints">Changepoints</h3>
 
-<p>The first is quite simple, suppose we observe a long uni-variate time series of some movement measure in a sensor call it n. For the purpose of this blog I&rsquo;ll simply generate some fake data:</p>
+<p>The first is quite simple, suppose we observe a long uni-variate time series of some movement measure in a sensor. For the purpose of this blog I&rsquo;ll simply generate some fake data:</p>
 
 <p><img src="../img/run.png" alt="The picture on the left doesn't have the mean of the generating process drawn in, the right does." />
 <em>The picture on the left doesn&rsquo;t have the mean of the generating process drawn in, the right does.</em></p>
@@ -240,26 +240,26 @@
 
 <p>How many changepoints is there?
 Where&rsquo;s the most likely place for them to be?
-I tested two methods binary segmentation (Fast but approximate) and segment neighborhood (slow but exact). For both methods I told them to look for changes in both mean and variance and a maximum of 8 changepoints.</p>
+I tested two methods binary segmentation (Fast but approximate) and segment neighbourhood (slow but exact). For both methods I told them to look for changes in both mean and variance and a maximum of 8 changepoints.</p>
 
-<p>The results show binary segmentation falsely detected a changepoint at t=3 but did the rest almost exactly (total of 5 seconds in error). However segment neighborhood detected the exact results.</p>
+<p>The results show binary segmentation falsely detected a changepoint at t=3 but did the rest almost exactly (total of 5 seconds in error). However, segment neighbourhood detected the exact results.</p>
 
 <p>With a dataset of this size the difference in speed hardly matters however when we get to larger datasets speed becomes a very important issue. This is where PELT (1) comes in which is shown to be almost as fast as binary segmentation but nearly always gives a more accurate solution.</p>
 
 <h3 id="rate-of-data">Rate of Data</h3>
 
-<p>Take your phone for an example, if you have a fairly new phone is probably has some feature than tells you how much you walk, run and climb stairs each day. I had a look at an app on my phone that gives the raw data of the accelerometor sensor which observes how much your phone moves in 3d.</p>
+<p>Take your phone for an example, if you have a fairly new phone is probably has some feature than tells you how much you walk, run and climb stairs each day. I had a look at an app on my phone that gives the raw data of the accelerometer sensor which observes how much your phone moves in 3d.</p>
 
 <p><img src="../img/ss.png" alt="Picture of my accelerometer time series data as I move the phone back and forth from my face. It accurately detects that it's not moving much in the y direction (to the ceiling) or x direction (right/left)." />
 <em>Picture of my accelerometer time series data as I move the phone back and forth from my face. It accurately detects that it&rsquo;s not moving much in the y direction (to the ceiling) or x direction (right/left).</em></p>
 
-<p>The picture above was recording my movements 50 times per second. To go from this much data to say when my phone is in my pocket down to a diagnosis of what I&rsquo;m doing at any given time is a very difficult problem. Sadly at the moment I don&rsquo;t have any looked into any solutions however time series clustering seems to be the right area to look at, I plan on looking at this in future.</p>
+<p>The picture above was recording my movements 50 times per second. To go from this much data to say when my phone is in my pocket down to a diagnosis of what I&rsquo;m doing at any given time is a very difficult problem. Sadly at the moment I havn&rsquo;t looked into any solutions however time series clustering seems to be the right area to look at, I plan on looking at this in future.</p>
 
 <p>Another slightly strange phenomena is that if you observed data at the wrong frequency then the results can be extremely misleading. One example is the wagon wheel effect:</p>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jHS9JGkEOmA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-<p>The same thing can happen in certain situations in sensor phone sensor data for example you might want to check if someone is climbing stairs vs walking. If say we&rsquo;re just looking at the vertical component of the accelerator and we miss the actual vertical launch due to sampling frequency it will look like the person is standing still rather than climbing.</p>
+<p>The same thing can happen in certain situations in sensor phone sensor data for example you might want to check if someone is climbing stairs vs walking. If say we&rsquo;re just looking at the vertical component of the accelerator, and we miss the actual vertical launch due to sampling frequency it will look like the person is standing still rather than climbing.</p>
 
     </section>
 

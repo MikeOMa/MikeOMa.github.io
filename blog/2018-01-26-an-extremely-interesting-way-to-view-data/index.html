@@ -43,7 +43,7 @@
     <title>An &#34;Extreme&#34;ly interesting way to view data &middot; STOR-i Blog</title>
 
     
-    <meta name="description" content="If you can&#39;t guess from the title this post is about Extreme Value Theory (EVT). Last week I attended a talk from Professor Jonathan Tawn on some EVT applicatio" />
+    <meta name="description" content="If you can’t guess from the title this post is about Extreme Value Theory (EVT). Last week I attended a talk from Professor Jonathan Tawn on some EVT applicatio" />
     
 
     <meta name="HandheldFriendly" content="True" />
@@ -110,7 +110,7 @@
     },
     "headline": An &#34;Extreme&#34;ly interesting way to view data,
     "name": An &#34;Extreme&#34;ly interesting way to view data,
-    "wordCount": 751,
+    "wordCount": 752,
     "timeRequired": "PT4M",
     "inLanguage": {
       "@type": "Language",
@@ -229,12 +229,12 @@
     </header>
 
     <section class="post-content">
-      <p>If you can't guess from the title this post is about Extreme Value Theory (EVT). Last week I attended a talk from Professor Jonathan Tawn on some EVT applications and Jenny Wadsworth on some theory in multivariate EVT. I found it particularly interesting as unlike most methods of analyzing data we don't really care about the data which isn't surprising, instead we focus on modelling the tail ends and unlikely observations. All graphics in this blog post are from Jon Tawn. Here I'll focus purely on uni-variate extreme value theory.</p>
-<p>So what is Extreme Value Theory? It tries to answer the question how rare is it to see an event that's this Extreme. This is applied in various ways, for example suppose you’re engineering a power station. Ideally you don't want this at any risk what so ever of flooding as water mixing with electricity won't end well as Lancaster locals know well (See picture below). However it's rare that there's zero chance of something happening so suppose city planners are happy as long as it's safe up to to. about a 1 in 1000 year event. This is where Extreme value theory comes in. <img src="../img/power.png" alt="Lancaster&#39;s power station after December 2015 floods; left Lancaster without power and closed Lancaster University." /></p>
+      <p>If you can’t guess from the title this post is about Extreme Value Theory (EVT). Last week I attended a talk from Professor Jonathan Tawn on some EVT applications and Jenny Wadsworth on some theory in multivariate EVT. I found it particularly interesting as unlike most methods of analysing data we don't really care about the data which isn't surprising, instead we focus on modelling the tail ends and unlikely observations. All graphics in this blog post are from Jon Tawn. Here I'll focus purely on uni-variate extreme value theory.</p>
+<p>So what is Extreme Value Theory? It tries to answer the question of how rare is it to see an event that's this Extreme. This is applied in various ways, for example suppose you’re engineering a power station. Ideally you don't want this at any risk what so ever of flooding as water mixing with electricity won't end well as Lancaster locals know well (See picture below). However it's rare that there's zero chance of something happening so suppose city planners are happy as long as it's safe up to to. about a 1 in 1000 year event. This is where Extreme value theory comes in. <img src="../img/power.png" alt="Lancaster&#39;s power station after December 2015 floods; left Lancaster without power and closed Lancaster University." /></p>
 <div id="application-areas" class="section level3">
 <h3>Application areas</h3>
-<p>We we're introduced to a example of comparing track runners over different times &amp; distances. There's two applications of EVT in this area that I found very interesting; the first being that you can see inconsistencies in the data which may to due to foul play such as drug use; the second being that you can actually answer the question how good was this athlete given that they came from this time and this event (i.e comparing an 800m track runner from 1981 to a 100m track runner from 2009).</p>
-<p>The first problem that shows up with this is that the population of athletes is forever changing. This is due to the vast improvement in knowledge about training, diet and monitoring of the top athletes, meaning that the record holders today are actually at an advantage over the record holders in the past. However we can model this trend of records and see that the records have a pattern, this is shown in (1). Extreme Value theory can then be used to see how likely such a record would have been. If it's almost impossible that this record occurred under normal circumstances then investigations into drug use can be conducted.</p>
+<p>We we're introduced to a example of comparing track runners over different times &amp; distances. There's two applications of EVT in this area that I found very interesting; the first being that you can see inconsistencies in the data which may to due to foul play such as drug use; the second being that you can actually answer the question: how good was this athlete given that they came from this time and this event (i.e comparing an 800m track runner from 1981 to a 100m track runner from 2009).</p>
+<p>The first problem that shows up with this is that the population of athletes is forever changing. This is due to the vast improvement in knowledge about training, diet and monitoring of the top athletes, meaning that the record holders today are actually at an advantage over the record holders in the past. However, we can model this trend of records and see that the records have a pattern, this is shown in (1). Extreme Value theory can then be used to see how likely such a record would have been. If it's almost impossible that this record occurred under normal circumstances then investigations into drug use can be conducted.</p>
 <p>Other areas of application mentioned include weather forecasting such as the flood example above, Investigation into large insurance claims and risks in investments.</p>
 </div>
 <div id="methods" class="section level3">
@@ -244,7 +244,7 @@
 <img src="../img/ext_blockmax.png" alt="Taking the maximum in each year in a time series. We reduce our time-series of say 50 points each year for 20 years down to just 20 data points." />
 <p class="caption">Taking the maximum in each year in a time series. We reduce our time-series of say 50 points each year for 20 years down to just 20 data points.</p>
 </div>
-<p>After we do this block maxima reduction to our dataset we have a asymptotic result kind of similar to the Central Limit Theorem referred to as “Extremal Types theorem”:</p>
+<p>After we do this block maxima reduction to our dataset we have an asymptotic result kind of similar to the Central Limit Theorem referred to as “Extremal Types theorem”:</p>
 <p><span class="math display">\[ X_1,X_2,...X_n \sim_{IID} F \text{ and } M_n=MAX(X_1,X_2,X_3,...X_n)\]</span></p>
 <p>implies that</p>
 <p><span class="math display">\[ M_n\sim GEV(\mu, \sigma, \epsilon)\]</span></p>

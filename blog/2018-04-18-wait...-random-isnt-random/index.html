@@ -106,8 +106,8 @@
     },
     "headline": Wait... random isn&#39;t random,
     "name": Wait... random isn&#39;t random,
-    "wordCount": 838,
-    "timeRequired": "PT4M",
+    "wordCount": 865,
+    "timeRequired": "PT5M",
     "inLanguage": {
       "@type": "Language",
       "alternateName": en
@@ -221,7 +221,7 @@
     </header>
 
     <section class="post-content">
-      <p>Here’s a nice little mind blower: it’s actually incredibly hard to find and measure something that is truly random. This is actually a bit of a problem as there’s so many places where random numbers are needed, in this blog post I’ll use a few running examples where random number generation is needed:</p>
+      <p>Here’s a nice little mind blower: it’s actually incredibly hard to find and measure something that is truly random. This is actually a bit of a problem as there’s so many places where random numbers are needed. In this blog post I’ll use a few running examples where random number generation is needed:</p>
 <ol style="list-style-type: decimal">
 <li>The gambling sector, pretty much everywhere from shuffling cards in online poker (and in casinos for the particularly high tech ones) to slot machines for obvious reasons.</li>
 <li>Simulation, when it’s not deterministic you need random numbers. Similarly, video games can be seen as big simulations and generally require random numbers.</li>
@@ -234,12 +234,16 @@
 <li>Measuring radioactivity, place a radioactive isotope in front of a device called a Geiger counter, observing the time between clicks is random. PRO: The numbers are truly random CONS: Health issues of sitting near a radioactive isotope every time you need a random number.</li>
 <li>Observing human behaviour, people are random, if you observe things like extremely small movements of a mouse or time between keystrokes to the microsecond can be used. PRO: Can get massive amounts of random numbers if you have a database of people willing to supply their keystrokes. CON: Good luck getting even one person to agree to giving you open access to their computer, you’ll need thousands to get the amount of random numbers most applications need.</li>
 </ul>
-<p>Both of these methods are highly limited in speed and require a lot of legwork to get up and running. ## Pseudorandom numbers So, how do we actually get these random numbers quickly? You’ll notice that nearly every programming language has a command to generate random numbers for example runif in R, this all done with a method called pseudorandom number generation, it generates sequences of numbers which look random but in fact they’re not. These numbers are completely determined by a mathematical formula which is designed to produce sequences of random looking numbers.</p>
-<p>Fact is that for applications like simulation and video games we really don’t care as long as they look random which makes. Take applications like security and gambling, if these numbers are in any way predictable then there’s a massive problem with random number generation. Take an online slot machine, if someone figured out the underlying random number generator then they could just bet small when they know they’re not going to win; then, when a winning spin is coming up they just put a big bet on. Therefore, if gambling companies go for pseudorandom numbers they should really ensure that it’s virtually impossible to reverse engineer.</p>
+<p>Both of these methods are highly limited in speed and require a lot of legwork to get up and running.</p>
+</div>
+<div id="pseudorandom-numbers" class="section level2">
+<h2>Pseudorandom numbers</h2>
+<p>So, how do we actually get these random numbers quickly? You’ll notice that nearly every programming language has a command to generate random numbers for example runif in R, this all done with a method called pseudorandom number generation, it generates sequences of numbers which look random but in fact they’re not. These numbers are completely determined by a mathematical formula which is designed to produce sequences of random looking numbers.</p>
+<p>Fact is that for applications like simulation and video games we really don’t care as long as they look random which makes the simulation seem realistic. Take applications like security and gambling, if these numbers are in any way predictable then there’s a massive problem with random number generation. Take an online slot machine, if someone figured out the underlying random number generator then they could just bet small when they know they’re not going to win; then, when a winning spin is coming up they just put a big bet on. Therefore, if gambling companies go for pseudorandom numbers they should really ensure that it’s virtually impossible to reverse engineer.</p>
 </div>
 <div id="example-generator-linear-congruential-generator" class="section level2">
 <h2>Example generator – Linear congruential generator</h2>
-<p>Here I’ll give an example of one of the earliest pseudorandom number generator. It’s defined as follows <span class="math display">\[X_n=(aX_{n-1}+c)mod m\]</span></p>
+<p>Here I’ll give an example of one of the earliest pseudorandom number generator. It’s defined as follows <span class="math display">\[X_n=(aX_{n-1}+c)\text{mod} m,\quad U_n=X_n/m\]</span></p>
 <p>so you have to specify</p>
 <ul>
 <li>a the multiplier</li>
@@ -247,12 +251,13 @@
 <li>c the increment</li>
 <li><span class="math inline">\(X_0\)</span> a value to start the algorithm</li>
 </ul>
-<p>In this generator, the next value is completely determined by the value that came before it. I find this quite mind blowing as it’s one of the most commonly used random number generators. It creates sequences that look very random. Aditionally you can use some fancy mathematical proofs that gaurentee that no two random numbers will be repeated within a sequence of <span class="math inline">\(m\)</span> numbers. So if you set m to be massive like <span class="math inline">\(2^{32}\)</span> this can make very long sequences of unique numbers.</p>
-<p>Generators like this are good for Random assignment and simulation as they give us billions of numbers which statistically indistiguisibly for truely random numbers (if we choose the right formula and numbers). I’ll now talk about one problem with such a generator.</p>
+<p>In this generator, the next value is completely determined by the value that came before it. I find this quite mind-blowing as it’s one of the most commonly used random number generators. It creates sequences that look very random. Additionally you can use some fancy mathematical proofs that guarentee that no two random numbers will be repeated within a sequence of <span class="math inline">\(m\)</span> numbers. So, if you set m to be massive like <span class="math inline">\(2^{32}\)</span> this can make very long sequences of unique numbers.</p>
+<p>Generators like this are good for Random assignment and simulation as they give us billions of numbers which statistically identical for truly random numbers (if we choose the right formula and numbers). I find this quite funny as for certain choices of parameters these can seem to meet the independence criteria even though they’re not independent.</p>
+<p>I’ll now talk about one problem with such a generator.</p>
 </div>
 <div id="cryptographically-secure-pseudorandom-number-generator" class="section level2">
 <h2>Cryptographically secure pseudorandom number generator</h2>
-<p>Cryptographically secure basicly means you can give someone as many numbers as they like and they’ll never be able to reverse engineer the generator. This is exactly what is needed for applications to gambling and security. The linear congruential generator above does not satisfy this property take the numbers:</p>
+<p>Cryptographically secure basically means you can give someone as many numbers as they like, and they’ll never be able to reverse engineer the generator. This is exactly what is needed for applications to gambling and security. The linear congruential generator above does not satisfy this property take the numbers:</p>
 <blockquote>
 <p>5, 1, 3, 2, 6, 4, 5, 1</p>
 </blockquote>
@@ -260,7 +265,7 @@
 </div>
 <div id="conclusion" class="section level2">
 <h2>Conclusion</h2>
-<p>There’s a generally a tradeoff between what properties you’d like in your generator. Computational efficiency usually results in a loss in security and true randomness. High-security results in a slow algorithm but for the applications it’s needed for that’s probably fine. True random numbers are great… but they’re also more painful to obtain than is justified in most uses.</p>
+<p>There’s a generally a trade-off between what properties you’d like in your generator. Computational efficiency usually results in a loss in security and true randomness. High-security results in a slow algorithm but for the applications it’s needed for that’s probably fine. True random numbers are great… but they’re also more painful to obtain than is justified in most uses.</p>
 <p>Below is an extremely accurate dilbert</p>
 <div class="figure">
 <img src="../img/dilbert.jpg" alt="Problem with random number generators." />

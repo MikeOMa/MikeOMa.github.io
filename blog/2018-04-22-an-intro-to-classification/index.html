@@ -108,7 +108,7 @@
     },
     "headline": An Intro to Classification,
     "name": An Intro to Classification,
-    "wordCount": 1230,
+    "wordCount": 1273,
     "timeRequired": "PT6M",
     "inLanguage": {
       "@type": "Language",
@@ -228,8 +228,7 @@
       <p>So, this is a follow on from the <a href="https://mikeoma.github.io/blog/2018-03-20-supervised-or-not/">Supervised or not blog post</a> where I looked at how to decide if a problem is supervised or unsupervised and looked at a simple example on the iris dataset. Similar to that post, here I’ll look at classification again, but we’ll go more in-depth into some issues with classification.</p>
 <div id="linear-discriminant-analysis" class="section level2">
 <h2>Linear Discriminant Analysis</h2>
-<p>In the previous post we’ve used K-nn, here we’ll use Linear discriminant analysis (LDA) which is slightly more complicated.</p>
-<p>It makes the assumption that the points in each class <span class="math inline">\(k\)</span> follow a normal distribution with mean <span class="math inline">\(\mu_k\)</span> and covariance matrix <span class="math inline">\(\Sigma\)</span> where the variance is the same across all the groups.</p>
+<p>In the previous post we’ve used K-nn, here we’ll use Linear discriminant analysis (LDA) which is slightly more complicated. It makes the assumption that the points in each class <span class="math inline">\(k\)</span> follow a normal distribution with mean <span class="math inline">\(\mu_k\)</span> and covariance matrix <span class="math inline">\(\Sigma\)</span> where the variance is the same across all the groups.</p>
 <p>So this time we have the same setup <span class="math inline">\(n\)</span> data-points <span class="math inline">\(x_i\)</span> and each data-point has a response <span class="math inline">\(y_i\)</span>. The goal is to fit a model which gets P(Y=k| X=x), so the probability that the class is k given the data-point <span class="math inline">\(x\)</span>. We then derive this discriminant function <span class="math inline">\(\delta_j(x_i)\)</span> which basically forms a rule that the j with the highest value of <span class="math inline">\(\delta_j\)</span> will be the most likely class, and therefore our prediction.</p>
 <p>The beauty of this method is that is gives us a probability that our prediction is correct using the formula.</p>
 <div id="why-the-name" class="section level4">
@@ -287,10 +286,10 @@ fit</code></pre>
 ## balance 2.258357e-03
 ## income  2.725668e-06</code></pre>
 <p>The prior probabilities and coefficients are to do with the fitting of the discriminant function, we’ll ignore those here but if you’re interested in the underlying maths have a look at <a href="https://web.stanford.edu/~hastie/ElemStatLearn/">Chapter 5 in Elements of Statistical Learning</a></p>
-<p>The details to note is that the people will higher balances are the ones who are predicted to default.</p>
+<p>The details to note is that the people will higher balances are the ones who are predicted to default. There’s also the question how good the model is, to do this we can look at various diagnostics.</p>
 <div id="training-error" class="section level4">
 <h4>Training error</h4>
-<p>The first factor we’ll look at is something called the training error, it’s how often the model is correct if you we’re to predict the same <span class="math inline">\(y_i\)</span>’s using the <span class="math inline">\(x_i\)</span> corresponding to it and the model we fit.</p>
+<p>The first diagnostic we’ll look at is something called the training error, it’s how often the model is correct if you we’re to predict the same <span class="math inline">\(y_i\)</span>’s using the <span class="math inline">\(x_i\)</span> corresponding to it and the model we fit.</p>
 <pre class="r"><code>#obtain predictions 
 train.preds &lt;- predict(fit)
 #find % which are correct
@@ -304,7 +303,7 @@ dummypred &lt;- dataset$default
 dummypred &lt;- dummypred[1]
 mean(dummypred==dataset$default)</code></pre>
 <pre><code>## [1] 0.970805</code></pre>
-<p>Yeah so initially we got just slightly higher than an extremely stupid model, sounds bad right?</p>
+<p>Yeah so initially we got just slightly higher than an extremely stupid model, sounds bad right? So we’ll look at why that 0.5% increase is important.</p>
 </div>
 <div id="cross-tabulation" class="section level4">
 <h4>Cross Tabulation</h4>
@@ -322,7 +321,7 @@ table(train.preds$class,dataset$default)</code></pre>
 </div>
 <div id="a-benefit-of-lda" class="section level4">
 <h4>A benefit of LDA</h4>
-<p>LDA is a statistical model, if the assumptions turn out to be true (they almost never are) we get a pretty good estimate of$ P(Y=k |X=x )$. Even when they’re not true the estimate is pretty close, so here we’ll look at the probabilities for the mis classified observations.</p>
+<p>LDA is a statistical model, if the assumptions turn out to be true (they almost never are) we get a pretty good estimate of <span class="math inline">\(P(Y=k|X=x)\)</span>. Even when they’re not true the estimate is pretty close, so here we’ll look at the probabilities for the miss classified observations.</p>
 <pre class="r"><code>#index of misclassifications
 miscl &lt;-train.preds$class!=dataset$default
 misclYes &lt;- miscl &amp; dataset$default==&quot;Yes&quot;
@@ -342,7 +341,7 @@ ggplot()+geom_boxplot(aes(y=as.numeric(train.preds$posterior[,1]),x=colarray))+y
 <li>Wrong, Yes: Most of these have quite a low probability of being Yes which is disappointing as it shows our model does poorly.</li>
 </ul>
 <p>If you went for a rule of something like “if the model is more than 10% uncertain, carry out further checks” may be a good decision. However even the observations which we predicted correctly (Correct, yes, no) have quite a large amount of uncertainty for some observations so this may result in unneccessary work which may be avoided by using a different model or dataset.</p>
-<p>An analysis like this would be impossible with k-nearest neighbours therefore motivating our choice.</p>
+<p>An analysis like this would be impossible with k-nearest neighbours therefore motivating our choice. Statistical models usually give other insights which can then be useful for assessing risk or making decisions.</p>
 </div>
 </div>
 <div id="conclusion" class="section level2">
