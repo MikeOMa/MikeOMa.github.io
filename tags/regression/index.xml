@@ -6,10 +6,20 @@
     <description>Recent content in Regression on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 20 Mar 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://mikeoma.github.io/tags/regression/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Model Selection</title>
+      <link>https://mikeoma.github.io/blog/2018-04-22-model-selection/</link>
+      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://mikeoma.github.io/blog/2018-04-22-model-selection/</guid>
+      <description>I’ve done a couple blogposts in the past on Statistical learning, see here if you havn’t read them yet. In this blog post I’ll explain the most popular way to compare models and decide which one is best. It’s known as the test-train split. This is really only useful for supervised problems.
+The test set approach So the test-set approach is quite intuitive when you hear about it. You have your \(n\) data-points you observed each of which has explanatory \(x_i\) and response \(y_i\) and our end goal is to predict the \(y_i\).</description>
+    </item>
     
     <item>
       <title>Supervised or not?</title>
