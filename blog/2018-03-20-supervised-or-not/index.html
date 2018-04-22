@@ -51,11 +51,11 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="../../images/favicon.ico">
-	  <link rel="apple-touch-icon" href="../../images/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/images/favicon.ico">
+	  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
 
-    <link rel="stylesheet" type="text/css" href="../../css/screen.css" />
-    <link rel="stylesheet" type="text/css" href="../../css/nav.css" />
+    <link rel="stylesheet" type="text/css" href="/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/css/nav.css" />
 
     
 
@@ -65,7 +65,7 @@
 </script>
     
       
-          <link href="../../index.xml" rel="alternate" type="application/rss+xml" title="STOR-i Blog" />
+          <link href="/index.xml" rel="alternate" type="application/rss+xml" title="STOR-i Blog" />
       
       
     
@@ -168,7 +168,7 @@
         
             
             <li class="nav-opened" role="presentation">
-            	<a href="../../">Blog Entries</a>
+            	<a href="/">Blog Entries</a>
             </li>
         
             
@@ -180,7 +180,7 @@
     </ul>
 
     
-    <a class="subscribe-button icon-feed" href="../../index.xml">Subscribe</a>
+    <a class="subscribe-button icon-feed" href="/index.xml">Subscribe</a>
     
 </div>
 <span class="nav-cover"></span>
@@ -195,7 +195,7 @@
 
 
   
-      <a class="blog-logo" href="https://mikeoma.github.io"><img src="../../images/logo.png" alt="Home" /></a>
+      <a class="blog-logo" href="https://mikeoma.github.io"><img src="/images/logo.png" alt="Home" /></a>
   
   
       <a class="menu-button" href="#"><span class="burger">&#9776;</span><span class="word">Menu</span></a>
@@ -242,16 +242,16 @@
 <h2>Example - Supervised:</h2>
 <p>The iris data set is a classical data set used in statistics, it contains 4 features, sepal length, sepal width, petal length and petal width. Each observation has the species which it came from, therefore this data set is labelled so a supervised learning algorithm is ideal. This form of supervised learning is known as classification, this is when the label is a factor rather than a continuous number.</p>
 <pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 99           5.1         2.5          3.0         1.1 versicolor
-## 38           4.9         3.6          1.4         0.1     setosa
-## 4            4.6         3.1          1.5         0.2     setosa
-## 105          6.5         3.0          5.8         2.2  virginica
-## 85           5.4         3.0          4.5         1.5 versicolor
-## 79           6.0         2.9          4.5         1.5 versicolor
-## 129          6.4         2.8          5.6         2.1  virginica
-## 109          6.7         2.5          5.8         1.8  virginica
-## 27           5.0         3.4          1.6         0.4     setosa
-## 66           6.7         3.1          4.4         1.4 versicolor</code></pre>
+## 47           5.1         3.8          1.6         0.2     setosa
+## 107          4.9         2.5          4.5         1.7  virginica
+## 148          6.5         3.0          5.2         2.0  virginica
+## 29           5.2         3.4          1.4         0.2     setosa
+## 138          6.4         3.1          5.5         1.8  virginica
+## 84           6.0         2.7          5.1         1.6 versicolor
+## 114          5.7         2.5          5.0         2.0  virginica
+## 135          6.1         2.6          5.6         1.4  virginica
+## 118          7.7         3.8          6.7         2.2  virginica
+## 126          7.2         3.2          6.0         1.8  virginica</code></pre>
 <p>Here I’ll just use the features corresponding to sepal, this allows us to easily plot the data, however will probably result in a loss of accuracy. Here we’ll use the simplest supervised learning algorithm, k-nearest neighbours. You specify the number k, then the algorithm finds the k closest points, it then takes all of these as votes for the class label and the majority then is used as the prediction.</p>
 <pre class="r"><code>library(class)
 set.seed(123)
@@ -270,7 +270,7 @@ print(paste(&quot;Classification Error rate:&quot;,mean(Error)))</code></pre>
 library(ggplot2)
 iris_plot &lt;- ggplot(aes(x=Sepal.Length, y=Sepal.Width, color=Species), data=iris)
 iris_plot+geom_point(aes(shape=Error),size=4)</code></pre>
-<p><img src="../../post/2018-04-07-supervised-or-not_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="/post/2018-04-07-supervised-or-not_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>The classification error rate is a common measure of how many points were classified wrong. 0 being the best which means every point was classified correctly. I also plotted the in if our classifier correctly predicted the species, as you can see most of the errors tend to occur on the boundaries of the species or where there’s a data point in an unexpected place given its’ species.</p>
 </div>
 <div id="example---unsupervised" class="section level2">
@@ -278,12 +278,12 @@ iris_plot+geom_point(aes(shape=Error),size=4)</code></pre>
 <p>Here I give an example of clustering I’ll use geyser data set which includes measurements from the old faithful geyser. It involves 2 measurements,“eruptions” how long an Eruption lasted and “waiting” time until the next eruption.</p>
 <pre class="r"><code>faith_plot &lt;- ggplot(aes(x=waiting,y=eruptions), data=faithful)+geom_point()
 faith_plot</code></pre>
-<p><img src="../../post/2018-04-07-supervised-or-not_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="/post/2018-04-07-supervised-or-not_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <p>As we can see from the plot there’s 2 clear groups of data with a few random points in between Here I’ll use a similar method to before, it’s called k-means. For this method you specify k like before which is how many clusters the algorithm will choose, then it’ll find k centres. A point will be assigned to the closest centre. Looking at the picture it’s quite clear that k=2 is a good choice.</p>
 <pre class="r"><code>model &lt;- kmeans(faithful,2)
 Cluster_assignment &lt;- as.factor(model$cluster) 
 ggplot(aes(x=waiting,y=eruptions,color=Cluster_assignment), data=faithful)+geom_point()</code></pre>
-<p><img src="../../post/2018-04-07-supervised-or-not_files/figure-html/unnamed-chunk-4-1.png" width="672" /> As you can see the k-means algorithm split the eruptions as we’d expect, one with high times and one with low times. This problem is quite trivial as there’s only two dimensions, it’s easy to see that a rule like “split if waiting time is over 70” would do just as well. When you get onto problems with more features it becomes much more difficult to separate clusters; therefore, more advanced analysis than just looking at a plot must be used.</p>
+<p><img src="/post/2018-04-07-supervised-or-not_files/figure-html/unnamed-chunk-4-1.png" width="672" /> As you can see the k-means algorithm split the eruptions as we’d expect, one with high times and one with low times. This problem is quite trivial as there’s only two dimensions, it’s easy to see that a rule like “split if waiting time is over 70” would do just as well. When you get onto problems with more features it becomes much more difficult to separate clusters; therefore, more advanced analysis than just looking at a plot must be used.</p>
 </div>
 <div id="summary" class="section level2">
 <h2>Summary</h2>
@@ -385,7 +385,7 @@ s.setAttribute('data-timestamp', +new Date());
 
   <aside class="read-next">
   
-      <a class="read-next-story" style="no-cover" href="../../blog/2018-03-20-object-orientated-programming-in-r/">
+      <a class="read-next-story" style="no-cover" href="/blog/2018-03-20-object-orientated-programming-in-r/">
           <section class="post">
               <h2>Object Orientated Programming in R</h2>
               
@@ -393,7 +393,7 @@ s.setAttribute('data-timestamp', +new Date());
       </a>
   
   
-      <a class="read-next-story prev" style="no-cover" href="../../blog/2018-02-11-blogging-with-blogdown/">
+      <a class="read-next-story prev" style="no-cover" href="/blog/2018-02-11-blogging-with-blogdown/">
           <section class="post">
               <h2>Blogging with blogdown</h2>
           </section>
@@ -411,9 +411,9 @@ s.setAttribute('data-timestamp', +new Date());
     </footer>
     </div>
 
-    <script type="text/javascript" src="../../js/jquery.js"></script>
-    <script type="text/javascript" src="../../js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="../../js/index.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
     
 </body>
 </html>
