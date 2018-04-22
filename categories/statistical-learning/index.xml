@@ -22,16 +22,6 @@ Linear Discriminant Analysis In the previous post we’ve used K-nn, here we’l
     </item>
     
     <item>
-      <title>Model Selection</title>
-      <link>https://mikeoma.github.io/blog/2018-04-22-model-selection/</link>
-      <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://mikeoma.github.io/blog/2018-04-22-model-selection/</guid>
-      <description>I’ve done a couple blogposts in the past on Statistical learning, see here if you havn’t read them yet. In this blog post I’ll explain the most popular way to compare models and decide which one is best. It’s known as the test-train split. This is really only useful for supervised problems.
-The test set approach So the test-set approach is quite intuitive when you hear about it. You have your \(n\) data-points you observed each of which has explanatory \(x_i\) and response \(y_i\) and our end goal is to predict the \(y_i\).</description>
-    </item>
-    
-    <item>
       <title>AI ain&#39;t here yet!</title>
       <link>https://mikeoma.github.io/blog/2018-04-19-ai-aint-here-yet/</link>
       <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
