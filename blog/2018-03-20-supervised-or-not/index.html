@@ -247,16 +247,16 @@
 <h2>Example - Supervised:</h2>
 <p>The iris data set is a classical data set used in statistics, it contains 4 features, sepal length, sepal width, petal length and petal width. Each observation has the species which it came from, therefore this data set is labelled so a supervised learning algorithm is ideal. This form of supervised learning is known as classification, this is when the label is a factor rather than a continuous number.</p>
 <pre><code>##     Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
-## 70           5.6         2.5          3.9         1.1 versicolor
-## 53           6.9         3.1          4.9         1.5 versicolor
-## 69           6.2         2.2          4.5         1.5 versicolor
-## 98           6.2         2.9          4.3         1.3 versicolor
-## 18           5.1         3.5          1.4         0.3     setosa
-## 97           5.7         2.9          4.2         1.3 versicolor
-## 17           5.4         3.9          1.3         0.4     setosa
-## 9            4.4         2.9          1.4         0.2     setosa
-## 16           5.7         4.4          1.5         0.4     setosa
-## 104          6.3         2.9          5.6         1.8  virginica</code></pre>
+## 150          5.9         3.0          5.1         1.8  virginica
+## 136          7.7         3.0          6.1         2.3  virginica
+## 91           5.5         2.6          4.4         1.2 versicolor
+## 28           5.2         3.5          1.5         0.2     setosa
+## 139          6.0         3.0          4.8         1.8  virginica
+## 34           5.5         4.2          1.4         0.2     setosa
+## 84           6.0         2.7          5.1         1.6 versicolor
+## 118          7.7         3.8          6.7         2.2  virginica
+## 51           7.0         3.2          4.7         1.4 versicolor
+## 95           5.6         2.7          4.2         1.3 versicolor</code></pre>
 <p>Here I’ll just use the features corresponding to sepal, this allows us to easily plot the data, however will probably result in a loss of accuracy. Here we’ll use the simplest supervised learning algorithm, k-nearest neighbours. You specify the number k, then the algorithm finds the k closest points, it then takes all of these as votes for the class label and the majority then is used as the prediction.</p>
 <pre class="r"><code>library(class)
 set.seed(123)
