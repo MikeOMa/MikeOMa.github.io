@@ -241,11 +241,15 @@
 </div>
 <p>Pay careful attention to the picture as it’s much more informative than you think. Suppose the extremely intelligent individual being interviewed in the meme was the captain of the home team. Translating the meme we get the following aspects</p>
 <ul>
-<li><strong>We Sports our best</strong> from the top right breaks down into two aspects in the bottom left</li>
+<li><strong>We Sports our best</strong> from the top right breaks down into two aspects in the bottom left
+<ul>
 <li><strong>We need to stop the other team from scoring points</strong> makes a parameter for the model <span class="math inline">\(\alpha_{home}\)</span>, saying how strong the home team attack is.</li>
 <li><strong>While we ourselves score many points.</strong> makes a parameter <span class="math inline">\(\beta_{home}\)</span>, saying how strong the home defence is.</li>
-<li><strong>The other team was sportsing too</strong></li>
+</ul></li>
+<li><strong>The other team was sportsing too</strong>
+<ul>
 <li>similar to the home team the away team get their two parameters, <span class="math inline">\(\alpha_{away}\)</span>, <span class="math inline">\(\beta_{away}\)</span>.</li>
+</ul></li>
 <li>Sadly the meme failed to invent the last parameter, <span class="math inline">\(\gamma\)</span> which adds a strength bonus to the home teams parameters as their likely to preform better.</li>
 </ul>
 <p>These parameters are then combined such a way that they form a two Poisson rate parameters, one for the rate at which the home team will score goals; one for the rate the away team will score goals.</p>
