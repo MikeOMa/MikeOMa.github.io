@@ -2,84 +2,84 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on STOR-i Blog</title>
-    <link>/tags/</link>
+    <link>https://mikeoma.github.io/tags/</link>
     <description>Recent content in Tags on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mikeoma.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Applications</title>
-      <link>/tags/applications/</link>
+      <link>https://mikeoma.github.io/tags/applications/</link>
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/applications/</guid>
+      <guid>https://mikeoma.github.io/tags/applications/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blogdown</title>
-      <link>/tags/blogdown/</link>
+      <link>https://mikeoma.github.io/tags/blogdown/</link>
       <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/blogdown/</guid>
+      <guid>https://mikeoma.github.io/tags/blogdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Changepoints</title>
-      <link>/tags/changepoints/</link>
+      <link>https://mikeoma.github.io/tags/changepoints/</link>
       <pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/changepoints/</guid>
+      <guid>https://mikeoma.github.io/tags/changepoints/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Classification</title>
-      <link>/tags/classification/</link>
+      <link>https://mikeoma.github.io/tags/classification/</link>
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/classification/</guid>
+      <guid>https://mikeoma.github.io/tags/classification/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Clustering</title>
-      <link>/tags/clustering/</link>
+      <link>https://mikeoma.github.io/tags/clustering/</link>
       <pubDate>Tue, 20 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/clustering/</guid>
+      <guid>https://mikeoma.github.io/tags/clustering/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
-      <link>/tags/r/</link>
+      <link>https://mikeoma.github.io/tags/r/</link>
       <pubDate>Tue, 20 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/r/</guid>
+      <guid>https://mikeoma.github.io/tags/r/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Regression</title>
-      <link>/tags/regression/</link>
+      <link>https://mikeoma.github.io/tags/regression/</link>
       <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/regression/</guid>
+      <guid>https://mikeoma.github.io/tags/regression/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Theory</title>
-      <link>/tags/theory/</link>
+      <link>https://mikeoma.github.io/tags/theory/</link>
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>/tags/theory/</guid>
+      <guid>https://mikeoma.github.io/tags/theory/</guid>
       <description></description>
     </item>
     

@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Classification on STOR-i Blog</title>
-    <link>/tags/classification/</link>
+    <link>https://mikeoma.github.io/tags/classification/</link>
     <description>Recent content in Classification on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 26 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/classification/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://mikeoma.github.io/tags/classification/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>We Sportsed Good</title>
-      <link>/blog/2018-04-26-we-sportsed-good/</link>
+      <link>https://mikeoma.github.io/blog/2018-04-26-we-sportsed-good/</link>
       <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2018-04-26-we-sportsed-good/</guid>
+      <guid>https://mikeoma.github.io/blog/2018-04-26-we-sportsed-good/</guid>
       <description>This will be my last blog post before exams sadly :( . Have 5 exams coming up in 2 weeks, so I will be prioritising my time for the month. My next post will likely be about the PhD topic I’ve chosen (we find out roughly after exams.)
 Usually I try to avoid writing about events I’ve attended as I’d have a feeling that I’d make them sound worse than they were.</description>
     </item>
     
     <item>
       <title>Model Selection</title>
-      <link>/blog/2018-04-23-model-selection/</link>
+      <link>https://mikeoma.github.io/blog/2018-04-23-model-selection/</link>
       <pubDate>Mon, 23 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2018-04-23-model-selection/</guid>
+      <guid>https://mikeoma.github.io/blog/2018-04-23-model-selection/</guid>
       <description>I’ve done a couple blogposts in the past on Statistical learning, see here if you havn’t read them yet. In this blog post I’ll explain the most popular way to compare models and decide which one is best. It’s known as the test-train split. This is really only useful for supervised problems.
 The test set approach So the test-set approach is quite intuitive when you hear about it. You have your \(n\) data-points you observed each of which has explanatory \(x_i\) and response \(y_i\) and our end goal is to predict the \(y_i\).</description>
     </item>
     
     <item>
       <title>An Intro to Classification</title>
-      <link>/blog/2018-04-22-an-intro-to-classification/</link>
+      <link>https://mikeoma.github.io/blog/2018-04-22-an-intro-to-classification/</link>
       <pubDate>Sun, 22 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2018-04-22-an-intro-to-classification/</guid>
+      <guid>https://mikeoma.github.io/blog/2018-04-22-an-intro-to-classification/</guid>
       <description>So, this is a follow on from the Supervised or not blog post where I looked at how to decide if a problem is supervised or unsupervised and looked at a simple example on the iris dataset. Similar to that post, here I’ll look at classification again, but we’ll go more in-depth into some issues with classification.
 Linear Discriminant Analysis In the previous post we’ve used K-nn, here we’ll use Linear discriminant analysis (LDA) which is slightly more complicated.</description>
     </item>
     
     <item>
       <title>Supervised or not?</title>
-      <link>/blog/2018-03-20-supervised-or-not/</link>
+      <link>https://mikeoma.github.io/blog/2018-03-20-supervised-or-not/</link>
       <pubDate>Tue, 20 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2018-03-20-supervised-or-not/</guid>
+      <guid>https://mikeoma.github.io/blog/2018-03-20-supervised-or-not/</guid>
       <description>MACHINE LEARNING!!! So, if you’ve not heard of machine learning yet, you probably haven’t been watching any TV the last decade. Problem is machine learning is absolutely massive field.
 This is the intro to a series of blog posts I plan on doing on various areas in machine learning, more specifically statistically backed methods therefore I call it statistical learning. In this blog post I aim to break down the two main areas that are generally focused on.</description>
     </item>
