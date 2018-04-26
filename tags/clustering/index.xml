@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clustering on STOR-i Blog</title>
-    <link>https://mikeoma.github.io/tags/clustering/</link>
+    <link>/tags/clustering/</link>
     <description>Recent content in Clustering on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 20 Mar 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mikeoma.github.io/tags/clustering/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/clustering/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Supervised or not?</title>
-      <link>https://mikeoma.github.io/blog/2018-03-20-supervised-or-not/</link>
+      <link>/blog/2018-03-20-supervised-or-not/</link>
       <pubDate>Tue, 20 Mar 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeoma.github.io/blog/2018-03-20-supervised-or-not/</guid>
+      <guid>/blog/2018-03-20-supervised-or-not/</guid>
       <description>MACHINE LEARNING!!! So, if you’ve not heard of machine learning yet, you probably haven’t been watching any TV the last decade. Problem is machine learning is absolutely massive field.
 This is the intro to a series of blog posts I plan on doing on various areas in machine learning, more specifically statistically backed methods therefore I call it statistical learning. In this blog post I aim to break down the two main areas that are generally focused on.</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Extreme Value Theory on STOR-i Blog</title>
-    <link>https://mikeoma.github.io/categories/extreme-value-theory/</link>
+    <link>/categories/extreme-value-theory/</link>
     <description>Recent content in Extreme Value Theory on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Jan 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mikeoma.github.io/categories/extreme-value-theory/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/extreme-value-theory/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>An &#34;Extreme&#34;ly interesting way to view data</title>
-      <link>https://mikeoma.github.io/blog/2018-01-26-an-extremely-interesting-way-to-view-data/</link>
+      <link>/blog/2018-01-26-an-extremely-interesting-way-to-view-data/</link>
       <pubDate>Fri, 26 Jan 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeoma.github.io/blog/2018-01-26-an-extremely-interesting-way-to-view-data/</guid>
+      <guid>/blog/2018-01-26-an-extremely-interesting-way-to-view-data/</guid>
       <description>If you can’t guess from the title this post is about Extreme Value Theory (EVT). Last week I attended a talk from Professor Jonathan Tawn on some EVT applications and Jenny Wadsworth on some theory in multivariate EVT. I found it particularly interesting as unlike most methods of analysing data we don&#39;t really care about the data which isn&#39;t surprising, instead we focus on modelling the tail ends and unlikely observations.</description>
     </item>
     

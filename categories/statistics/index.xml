@@ -2,31 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Statistics on STOR-i Blog</title>
-    <link>https://mikeoma.github.io/categories/statistics/</link>
+    <link>/categories/statistics/</link>
     <description>Recent content in Statistics on STOR-i Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 18 Apr 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Apr 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://mikeoma.github.io/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/statistics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>We Sportsed Good</title>
+      <link>/blog/2018-04-26-we-sportsed-good/</link>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2018-04-26-we-sportsed-good/</guid>
+      <description>This will be my last blog post before exams sadly :( . Have 5 exams coming up in 2 weeks, so I will be prioritising my time for the month. My next post will likely be about the PhD topic I’ve chosen (we find out roughly after exams.)
+Usually I try to avoid writing about events I’ve attended as I’d have a feeling that I’d make them sound worse than they were.</description>
+    </item>
+    
+    <item>
       <title>Wait... random isn&#39;t random</title>
-      <link>https://mikeoma.github.io/blog/2018-04-18-wait...-random-isnt-random/</link>
+      <link>/blog/2018-04-18-wait...-random-isnt-random/</link>
       <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeoma.github.io/blog/2018-04-18-wait...-random-isnt-random/</guid>
+      <guid>/blog/2018-04-18-wait...-random-isnt-random/</guid>
       <description>Here’s a nice little mind blower: it’s actually incredibly hard to find and measure something that is truly random. This is actually a bit of a problem as there’s so many places where random numbers are needed. In this blog post I’ll use a few running examples where random number generation is needed:
 The gambling sector, pretty much everywhere from shuffling cards in online poker (and in casinos for the particularly high tech ones) to slot machines for obvious reasons.</description>
     </item>
     
     <item>
       <title>Changepoints &amp; Sensor Data</title>
-      <link>https://mikeoma.github.io/blog/2018-02-05-changepoints--sensor-data/</link>
+      <link>/blog/2018-02-05-changepoints--sensor-data/</link>
       <pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://mikeoma.github.io/blog/2018-02-05-changepoints--sensor-data/</guid>
+      <guid>/blog/2018-02-05-changepoints--sensor-data/</guid>
       <description>Last week I attended a talk given by Professor Idris Eckley named &amp;ldquo;Making Sense of Sensor Data&amp;rdquo;. One of the main areas I see sensors being used every day is my phone telling me how much I&amp;rsquo;ve walked. There is quite a few problems in sensor data. I&amp;rsquo;ll look at two of them here namely the changepoints in the data and the frequency at which we observe data
 Changepoints The first is quite simple, suppose we observe a long uni-variate time series of some movement measure in a sensor.</description>
     </item>
